@@ -20,7 +20,7 @@ final class ScenesAssembly: Assembly {
             PSHomeView()
         }
         
-        container.register(PSHomeViewControllerProtocol.self) { resolver in
+        container.register(PSHomeViewController.self) { resolver in
             let view = resolver.resolve(PSHomeViewProtocol.self)!
             let viewModel = resolver.resolve(PSHomeViewModelProtocol.self)!
             let viewController = PSHomeViewController(viewProtocol: view, viewModelProtocol: viewModel)
@@ -38,7 +38,7 @@ final class ScenesAssembly: Assembly {
             PSUserProfileView()
         }
         
-        container.register(PSUserProfileViewControllerProtocol.self) { resolver in
+        container.register(PSUserProfileViewController.self) { resolver in
             let view = resolver.resolve(PSUserProfileViewProtocol.self)!
             let viewModel = resolver.resolve(PSUserProfileViewModelProtocol.self)!
             let viewController = PSUserProfileViewController(viewProtocol: view, viewModelProtocol: viewModel)

@@ -54,7 +54,7 @@ final public class PSHomeView: UIView {
     }
     
     private func addConstraints() {
-//        contentView.constraintToSuperview()
+        contentView.constraintToSuperview()
     }
     
     // MARK: - Private Functions

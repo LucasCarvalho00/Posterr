@@ -54,7 +54,12 @@ final public class PSUserProfileView: UIView {
     }
     
     private func addConstraints() {
-//        contentView.constraintToSuperview()
+        NSLayoutConstraint.activate([
+            contentView.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor),
+            contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+        ])
     }
     
     // MARK: - Private Functions

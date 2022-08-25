@@ -16,5 +16,11 @@ final class FoudationAssembly: Assembly {
             ScenesFactory(resolver: resolver)
         }
 
+        // MARK: - FlowController
+        
+        container.register(FlowController.self) { (resolver: Resolver, navigationController: UINavigationController) in
+            let factory = resolver.resolve(ScenesFactoryProtocol.self)!
+            return FlowController(navigationController: navigationController, factory: factory)
+        }
     }
 }
