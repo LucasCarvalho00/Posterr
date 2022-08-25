@@ -11,13 +11,22 @@
 		55EB7CAB1FB884ECA1C7D659 /* libPods-PosterrTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE34C33B026AE3318325C8E /* libPods-PosterrTests.a */; };
 		7674550F28B6FBEA00CC1F21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674550E28B6FBEA00CC1F21 /* AppDelegate.swift */; };
 		7674551128B6FBEA00CC1F21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674551028B6FBEA00CC1F21 /* SceneDelegate.swift */; };
-		7674551328B6FBEA00CC1F21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674551228B6FBEA00CC1F21 /* ViewController.swift */; };
-		7674551628B6FBEA00CC1F21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7674551428B6FBEA00CC1F21 /* Main.storyboard */; };
 		7674551828B6FBEC00CC1F21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7674551728B6FBEC00CC1F21 /* Assets.xcassets */; };
-		7674551B28B6FBEC00CC1F21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7674551928B6FBEC00CC1F21 /* LaunchScreen.storyboard */; };
 		7674552628B6FBEC00CC1F21 /* PosterrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674552528B6FBEC00CC1F21 /* PosterrTests.swift */; };
 		7674553028B6FBEC00CC1F21 /* PosterrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674552F28B6FBEC00CC1F21 /* PosterrUITests.swift */; };
 		7674553228B6FBEC00CC1F21 /* PosterrUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674553128B6FBEC00CC1F21 /* PosterrUITestsLaunchTests.swift */; };
+		7674555828B7021200CC1F21 /* PSUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674555528B7021200CC1F21 /* PSUserProfileViewController.swift */; };
+		7674555928B7021200CC1F21 /* PSUserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674555628B7021200CC1F21 /* PSUserProfileViewModel.swift */; };
+		7674555A28B7021200CC1F21 /* PSUserProfileProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674555728B7021200CC1F21 /* PSUserProfileProtocol.swift */; };
+		7674555C28B7021800CC1F21 /* PSUserProfileViewEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674555B28B7021800CC1F21 /* PSUserProfileViewEntity.swift */; };
+		7674555F28B7021D00CC1F21 /* PSUserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674555D28B7021D00CC1F21 /* PSUserProfileView.swift */; };
+		7674556028B7021D00CC1F21 /* PSUserProfileViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674555E28B7021D00CC1F21 /* PSUserProfileViewProtocol.swift */; };
+		7674556428B7022800CC1F21 /* PSHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674556128B7022800CC1F21 /* PSHomeViewController.swift */; };
+		7674556528B7022800CC1F21 /* PSHomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674556228B7022800CC1F21 /* PSHomeProtocol.swift */; };
+		7674556628B7022800CC1F21 /* PSHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674556328B7022800CC1F21 /* PSHomeViewModel.swift */; };
+		7674556828B7022E00CC1F21 /* PSHomeViewEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674556728B7022E00CC1F21 /* PSHomeViewEntity.swift */; };
+		7674556B28B7023300CC1F21 /* PSHomeViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674556928B7023300CC1F21 /* PSHomeViewProtocol.swift */; };
+		7674556C28B7023300CC1F21 /* PSHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674556A28B7023300CC1F21 /* PSHomeView.swift */; };
 		F61767888BCF1C581DE69853 /* libPods-PosterrUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E0DE7C3074C56407CD9D80 /* libPods-PosterrUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -46,16 +55,25 @@
 		7674550B28B6FBEA00CC1F21 /* Posterr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Posterr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7674550E28B6FBEA00CC1F21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7674551028B6FBEA00CC1F21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7674551228B6FBEA00CC1F21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7674551528B6FBEA00CC1F21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7674551728B6FBEC00CC1F21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7674551A28B6FBEC00CC1F21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7674551C28B6FBEC00CC1F21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7674552128B6FBEC00CC1F21 /* PosterrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PosterrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7674552528B6FBEC00CC1F21 /* PosterrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterrTests.swift; sourceTree = "<group>"; };
 		7674552B28B6FBEC00CC1F21 /* PosterrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PosterrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7674552F28B6FBEC00CC1F21 /* PosterrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterrUITests.swift; sourceTree = "<group>"; };
 		7674553128B6FBEC00CC1F21 /* PosterrUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterrUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7674555528B7021200CC1F21 /* PSUserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSUserProfileViewController.swift; sourceTree = "<group>"; };
+		7674555628B7021200CC1F21 /* PSUserProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSUserProfileViewModel.swift; sourceTree = "<group>"; };
+		7674555728B7021200CC1F21 /* PSUserProfileProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSUserProfileProtocol.swift; sourceTree = "<group>"; };
+		7674555B28B7021800CC1F21 /* PSUserProfileViewEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSUserProfileViewEntity.swift; sourceTree = "<group>"; };
+		7674555D28B7021D00CC1F21 /* PSUserProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSUserProfileView.swift; sourceTree = "<group>"; };
+		7674555E28B7021D00CC1F21 /* PSUserProfileViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSUserProfileViewProtocol.swift; sourceTree = "<group>"; };
+		7674556128B7022800CC1F21 /* PSHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSHomeViewController.swift; sourceTree = "<group>"; };
+		7674556228B7022800CC1F21 /* PSHomeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSHomeProtocol.swift; sourceTree = "<group>"; };
+		7674556328B7022800CC1F21 /* PSHomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSHomeViewModel.swift; sourceTree = "<group>"; };
+		7674556728B7022E00CC1F21 /* PSHomeViewEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSHomeViewEntity.swift; sourceTree = "<group>"; };
+		7674556928B7023300CC1F21 /* PSHomeViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSHomeViewProtocol.swift; sourceTree = "<group>"; };
+		7674556A28B7023300CC1F21 /* PSHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSHomeView.swift; sourceTree = "<group>"; };
 		7A5802BA81B8C861BDFF54F3 /* Pods-PosterrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PosterrUITests.debug.xcconfig"; path = "Target Support Files/Pods-PosterrUITests/Pods-PosterrUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		96E0DE7C3074C56407CD9D80 /* libPods-PosterrUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PosterrUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1DB91AA84ECAC0FC0D4A324 /* libPods-Posterr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Posterr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,13 +157,14 @@
 		7674550D28B6FBEA00CC1F21 /* Posterr */ = {
 			isa = PBXGroup;
 			children = (
-				7674550E28B6FBEA00CC1F21 /* AppDelegate.swift */,
-				7674551028B6FBEA00CC1F21 /* SceneDelegate.swift */,
-				7674551228B6FBEA00CC1F21 /* ViewController.swift */,
-				7674551428B6FBEA00CC1F21 /* Main.storyboard */,
+				7674553E28B6FED600CC1F21 /* App */,
+				7674553F28B6FF0700CC1F21 /* Foundation */,
+				7674554028B6FF1000CC1F21 /* DependencyInjection */,
+				7674554128B6FF1900CC1F21 /* FlowController */,
+				7674554228B6FF2400CC1F21 /* Services */,
+				7674554328B6FF3600CC1F21 /* UIKit */,
+				7674554428B6FF4700CC1F21 /* Scenes */,
 				7674551728B6FBEC00CC1F21 /* Assets.xcassets */,
-				7674551928B6FBEC00CC1F21 /* LaunchScreen.storyboard */,
-				7674551C28B6FBEC00CC1F21 /* Info.plist */,
 			);
 			path = Posterr;
 			sourceTree = "<group>";
@@ -165,6 +184,118 @@
 				7674553128B6FBEC00CC1F21 /* PosterrUITestsLaunchTests.swift */,
 			);
 			path = PosterrUITests;
+			sourceTree = "<group>";
+		};
+		7674553E28B6FED600CC1F21 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				7674551C28B6FBEC00CC1F21 /* Info.plist */,
+				7674550E28B6FBEA00CC1F21 /* AppDelegate.swift */,
+				7674551028B6FBEA00CC1F21 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		7674553F28B6FF0700CC1F21 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		7674554028B6FF1000CC1F21 /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
+		7674554128B6FF1900CC1F21 /* FlowController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FlowController;
+			sourceTree = "<group>";
+		};
+		7674554228B6FF2400CC1F21 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		7674554328B6FF3600CC1F21 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		7674554428B6FF4700CC1F21 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				7674554F28B7014B00CC1F21 /* PSHome */,
+				7674555228B7016600CC1F21 /* PSUserProfile */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		7674554F28B7014B00CC1F21 /* PSHome */ = {
+			isa = PBXGroup;
+			children = (
+				7674555028B7015800CC1F21 /* Content */,
+				7674555128B7015D00CC1F21 /* Entity */,
+				7674556228B7022800CC1F21 /* PSHomeProtocol.swift */,
+				7674556128B7022800CC1F21 /* PSHomeViewController.swift */,
+				7674556328B7022800CC1F21 /* PSHomeViewModel.swift */,
+			);
+			path = PSHome;
+			sourceTree = "<group>";
+		};
+		7674555028B7015800CC1F21 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				7674556A28B7023300CC1F21 /* PSHomeView.swift */,
+				7674556928B7023300CC1F21 /* PSHomeViewProtocol.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		7674555128B7015D00CC1F21 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				7674556728B7022E00CC1F21 /* PSHomeViewEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		7674555228B7016600CC1F21 /* PSUserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				7674555428B7017400CC1F21 /* Content */,
+				7674555328B7016E00CC1F21 /* Entity */,
+				7674555728B7021200CC1F21 /* PSUserProfileProtocol.swift */,
+				7674555528B7021200CC1F21 /* PSUserProfileViewController.swift */,
+				7674555628B7021200CC1F21 /* PSUserProfileViewModel.swift */,
+			);
+			path = PSUserProfile;
+			sourceTree = "<group>";
+		};
+		7674555328B7016E00CC1F21 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				7674555B28B7021800CC1F21 /* PSUserProfileViewEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		7674555428B7017400CC1F21 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				7674555D28B7021D00CC1F21 /* PSUserProfileView.swift */,
+				7674555E28B7021D00CC1F21 /* PSUserProfileViewProtocol.swift */,
+			);
+			path = Content;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,9 +405,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7674551B28B6FBEC00CC1F21 /* LaunchScreen.storyboard in Resources */,
 				7674551828B6FBEC00CC1F21 /* Assets.xcassets in Resources */,
-				7674551628B6FBEA00CC1F21 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,9 +499,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7674551328B6FBEA00CC1F21 /* ViewController.swift in Sources */,
+				7674555828B7021200CC1F21 /* PSUserProfileViewController.swift in Sources */,
+				7674556528B7022800CC1F21 /* PSHomeProtocol.swift in Sources */,
+				7674555A28B7021200CC1F21 /* PSUserProfileProtocol.swift in Sources */,
+				7674556428B7022800CC1F21 /* PSHomeViewController.swift in Sources */,
+				7674556028B7021D00CC1F21 /* PSUserProfileViewProtocol.swift in Sources */,
+				7674556828B7022E00CC1F21 /* PSHomeViewEntity.swift in Sources */,
 				7674550F28B6FBEA00CC1F21 /* AppDelegate.swift in Sources */,
+				7674555928B7021200CC1F21 /* PSUserProfileViewModel.swift in Sources */,
+				7674555F28B7021D00CC1F21 /* PSUserProfileView.swift in Sources */,
 				7674551128B6FBEA00CC1F21 /* SceneDelegate.swift in Sources */,
+				7674556C28B7023300CC1F21 /* PSHomeView.swift in Sources */,
+				7674555C28B7021800CC1F21 /* PSUserProfileViewEntity.swift in Sources */,
+				7674556B28B7023300CC1F21 /* PSHomeViewProtocol.swift in Sources */,
+				7674556628B7022800CC1F21 /* PSHomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,25 +547,6 @@
 			targetProxy = 7674552C28B6FBEC00CC1F21 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		7674551428B6FBEA00CC1F21 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7674551528B6FBEA00CC1F21 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		7674551928B6FBEC00CC1F21 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7674551A28B6FBEC00CC1F21 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		7674553328B6FBEC00CC1F21 /* Debug */ = {
