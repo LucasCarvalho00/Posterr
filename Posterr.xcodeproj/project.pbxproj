@@ -27,6 +27,12 @@
 		7674556828B7022E00CC1F21 /* PSHomeViewEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674556728B7022E00CC1F21 /* PSHomeViewEntity.swift */; };
 		7674556B28B7023300CC1F21 /* PSHomeViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674556928B7023300CC1F21 /* PSHomeViewProtocol.swift */; };
 		7674556C28B7023300CC1F21 /* PSHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674556A28B7023300CC1F21 /* PSHomeView.swift */; };
+		7674556F28B705BA00CC1F21 /* DependencyGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674556E28B705BA00CC1F21 /* DependencyGraph.swift */; };
+		7674557128B705C900CC1F21 /* FoudationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674557028B705C900CC1F21 /* FoudationAssembly.swift */; };
+		7674557328B705DC00CC1F21 /* ScenesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674557228B705DC00CC1F21 /* ScenesAssembly.swift */; };
+		7674557528B705F500CC1F21 /* ScenesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674557428B705F500CC1F21 /* ScenesFactory.swift */; };
+		7674557728B705FC00CC1F21 /* ScenesFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674557628B705FC00CC1F21 /* ScenesFactoryProtocol.swift */; };
+		7674557928B70C3800CC1F21 /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674557828B70C3800CC1F21 /* FlowController.swift */; };
 		F61767888BCF1C581DE69853 /* libPods-PosterrUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E0DE7C3074C56407CD9D80 /* libPods-PosterrUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +80,12 @@
 		7674556728B7022E00CC1F21 /* PSHomeViewEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSHomeViewEntity.swift; sourceTree = "<group>"; };
 		7674556928B7023300CC1F21 /* PSHomeViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSHomeViewProtocol.swift; sourceTree = "<group>"; };
 		7674556A28B7023300CC1F21 /* PSHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSHomeView.swift; sourceTree = "<group>"; };
+		7674556E28B705BA00CC1F21 /* DependencyGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyGraph.swift; sourceTree = "<group>"; };
+		7674557028B705C900CC1F21 /* FoudationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoudationAssembly.swift; sourceTree = "<group>"; };
+		7674557228B705DC00CC1F21 /* ScenesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenesAssembly.swift; sourceTree = "<group>"; };
+		7674557428B705F500CC1F21 /* ScenesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenesFactory.swift; sourceTree = "<group>"; };
+		7674557628B705FC00CC1F21 /* ScenesFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenesFactoryProtocol.swift; sourceTree = "<group>"; };
+		7674557828B70C3800CC1F21 /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
 		7A5802BA81B8C861BDFF54F3 /* Pods-PosterrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PosterrUITests.debug.xcconfig"; path = "Target Support Files/Pods-PosterrUITests/Pods-PosterrUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		96E0DE7C3074C56407CD9D80 /* libPods-PosterrUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PosterrUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1DB91AA84ECAC0FC0D4A324 /* libPods-Posterr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Posterr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,6 +218,10 @@
 		7674554028B6FF1000CC1F21 /* DependencyInjection */ = {
 			isa = PBXGroup;
 			children = (
+				7674556D28B7057F00CC1F21 /* Modules */,
+				7674557028B705C900CC1F21 /* FoudationAssembly.swift */,
+				7674557228B705DC00CC1F21 /* ScenesAssembly.swift */,
+				7674556E28B705BA00CC1F21 /* DependencyGraph.swift */,
 			);
 			path = DependencyInjection;
 			sourceTree = "<group>";
@@ -213,6 +229,7 @@
 		7674554128B6FF1900CC1F21 /* FlowController */ = {
 			isa = PBXGroup;
 			children = (
+				7674557828B70C3800CC1F21 /* FlowController.swift */,
 			);
 			path = FlowController;
 			sourceTree = "<group>";
@@ -296,6 +313,15 @@
 				7674555E28B7021D00CC1F21 /* PSUserProfileViewProtocol.swift */,
 			);
 			path = Content;
+			sourceTree = "<group>";
+		};
+		7674556D28B7057F00CC1F21 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				7674557428B705F500CC1F21 /* ScenesFactory.swift */,
+				7674557628B705FC00CC1F21 /* ScenesFactoryProtocol.swift */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,18 +525,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7674556F28B705BA00CC1F21 /* DependencyGraph.swift in Sources */,
 				7674555828B7021200CC1F21 /* PSUserProfileViewController.swift in Sources */,
 				7674556528B7022800CC1F21 /* PSHomeProtocol.swift in Sources */,
+				7674557928B70C3800CC1F21 /* FlowController.swift in Sources */,
 				7674555A28B7021200CC1F21 /* PSUserProfileProtocol.swift in Sources */,
 				7674556428B7022800CC1F21 /* PSHomeViewController.swift in Sources */,
+				7674557528B705F500CC1F21 /* ScenesFactory.swift in Sources */,
 				7674556028B7021D00CC1F21 /* PSUserProfileViewProtocol.swift in Sources */,
 				7674556828B7022E00CC1F21 /* PSHomeViewEntity.swift in Sources */,
 				7674550F28B6FBEA00CC1F21 /* AppDelegate.swift in Sources */,
 				7674555928B7021200CC1F21 /* PSUserProfileViewModel.swift in Sources */,
 				7674555F28B7021D00CC1F21 /* PSUserProfileView.swift in Sources */,
 				7674551128B6FBEA00CC1F21 /* SceneDelegate.swift in Sources */,
+				7674557128B705C900CC1F21 /* FoudationAssembly.swift in Sources */,
+				7674557728B705FC00CC1F21 /* ScenesFactoryProtocol.swift in Sources */,
 				7674556C28B7023300CC1F21 /* PSHomeView.swift in Sources */,
 				7674555C28B7021800CC1F21 /* PSUserProfileViewEntity.swift in Sources */,
+				7674557328B705DC00CC1F21 /* ScenesAssembly.swift in Sources */,
 				7674556B28B7023300CC1F21 /* PSHomeViewProtocol.swift in Sources */,
 				7674556628B7022800CC1F21 /* PSHomeViewModel.swift in Sources */,
 			);
