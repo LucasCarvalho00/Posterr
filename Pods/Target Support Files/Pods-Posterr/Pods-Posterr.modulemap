@@ -1,0 +1,6 @@
+module Pods_Posterr {
+  umbrella header "Pods-Posterr-umbrella.h"
+
+  export *
+  module * { export * }
+}
