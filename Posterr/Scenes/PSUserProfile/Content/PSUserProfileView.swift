@@ -54,7 +54,7 @@ final public class PSUserProfileView: UIView {
     }
     
     private func addConstraints() {
-        contentView.constraintToSuperview()
+//        contentView.constraintToSuperview()
     }
     
     // MARK: - Private Functions

@@ -11,7 +11,7 @@
 		55EB7CAB1FB884ECA1C7D659 /* libPods-PosterrTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE34C33B026AE3318325C8E /* libPods-PosterrTests.a */; };
 		7674550F28B6FBEA00CC1F21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674550E28B6FBEA00CC1F21 /* AppDelegate.swift */; };
 		7674551128B6FBEA00CC1F21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674551028B6FBEA00CC1F21 /* SceneDelegate.swift */; };
-		7674551828B6FBEC00CC1F21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7674551728B6FBEC00CC1F21 /* Assets.xcassets */; };
+		7674551828B6FBEC00CC1F21 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7674551728B6FBEC00CC1F21 /* Colors.xcassets */; };
 		7674552628B6FBEC00CC1F21 /* PosterrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674552528B6FBEC00CC1F21 /* PosterrTests.swift */; };
 		7674553028B6FBEC00CC1F21 /* PosterrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674552F28B6FBEC00CC1F21 /* PosterrUITests.swift */; };
 		7674553228B6FBEC00CC1F21 /* PosterrUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674553128B6FBEC00CC1F21 /* PosterrUITestsLaunchTests.swift */; };
@@ -33,6 +33,9 @@
 		7674557528B705F500CC1F21 /* ScenesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674557428B705F500CC1F21 /* ScenesFactory.swift */; };
 		7674557728B705FC00CC1F21 /* ScenesFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674557628B705FC00CC1F21 /* ScenesFactoryProtocol.swift */; };
 		7674557928B70C3800CC1F21 /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674557828B70C3800CC1F21 /* FlowController.swift */; };
+		7674557D28B8048C00CC1F21 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674557C28B8048C00CC1F21 /* Extension+UIColor.swift */; };
+		7674557F28B804BC00CC1F21 /* Extension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674557E28B804BC00CC1F21 /* Extension+UIImage.swift */; };
+		7674558128B804CD00CC1F21 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7674558028B804CD00CC1F21 /* Images.xcassets */; };
 		F61767888BCF1C581DE69853 /* libPods-PosterrUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E0DE7C3074C56407CD9D80 /* libPods-PosterrUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -61,7 +64,7 @@
 		7674550B28B6FBEA00CC1F21 /* Posterr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Posterr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7674550E28B6FBEA00CC1F21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7674551028B6FBEA00CC1F21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7674551728B6FBEC00CC1F21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7674551728B6FBEC00CC1F21 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		7674551C28B6FBEC00CC1F21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7674552128B6FBEC00CC1F21 /* PosterrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PosterrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7674552528B6FBEC00CC1F21 /* PosterrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterrTests.swift; sourceTree = "<group>"; };
@@ -86,6 +89,9 @@
 		7674557428B705F500CC1F21 /* ScenesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenesFactory.swift; sourceTree = "<group>"; };
 		7674557628B705FC00CC1F21 /* ScenesFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenesFactoryProtocol.swift; sourceTree = "<group>"; };
 		7674557828B70C3800CC1F21 /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
+		7674557C28B8048C00CC1F21 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
+		7674557E28B804BC00CC1F21 /* Extension+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImage.swift"; sourceTree = "<group>"; };
+		7674558028B804CD00CC1F21 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7A5802BA81B8C861BDFF54F3 /* Pods-PosterrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PosterrUITests.debug.xcconfig"; path = "Target Support Files/Pods-PosterrUITests/Pods-PosterrUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		96E0DE7C3074C56407CD9D80 /* libPods-PosterrUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PosterrUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1DB91AA84ECAC0FC0D4A324 /* libPods-Posterr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Posterr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,7 +182,6 @@
 				7674554228B6FF2400CC1F21 /* Services */,
 				7674554328B6FF3600CC1F21 /* UIKit */,
 				7674554428B6FF4700CC1F21 /* Scenes */,
-				7674551728B6FBEC00CC1F21 /* Assets.xcassets */,
 			);
 			path = Posterr;
 			sourceTree = "<group>";
@@ -244,6 +249,8 @@
 		7674554328B6FF3600CC1F21 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				7674557B28B8047000CC1F21 /* Images */,
+				7674557A28B8046C00CC1F21 /* Colors */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -322,6 +329,24 @@
 				7674557628B705FC00CC1F21 /* ScenesFactoryProtocol.swift */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		7674557A28B8046C00CC1F21 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				7674551728B6FBEC00CC1F21 /* Colors.xcassets */,
+				7674557C28B8048C00CC1F21 /* Extension+UIColor.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		7674557B28B8047000CC1F21 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				7674558028B804CD00CC1F21 /* Images.xcassets */,
+				7674557E28B804BC00CC1F21 /* Extension+UIImage.swift */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,7 +456,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7674551828B6FBEC00CC1F21 /* Assets.xcassets in Resources */,
+				7674558128B804CD00CC1F21 /* Images.xcassets in Resources */,
+				7674551828B6FBEC00CC1F21 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,7 +552,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7674556F28B705BA00CC1F21 /* DependencyGraph.swift in Sources */,
+				7674557F28B804BC00CC1F21 /* Extension+UIImage.swift in Sources */,
 				7674555828B7021200CC1F21 /* PSUserProfileViewController.swift in Sources */,
+				7674557D28B8048C00CC1F21 /* Extension+UIColor.swift in Sources */,
 				7674556528B7022800CC1F21 /* PSHomeProtocol.swift in Sources */,
 				7674557928B70C3800CC1F21 /* FlowController.swift in Sources */,
 				7674555A28B7021200CC1F21 /* PSUserProfileProtocol.swift in Sources */,
@@ -705,10 +733,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 22YGM83NY4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Posterr/Info.plist;
+				INFOPLIST_FILE = Posterr/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -735,10 +762,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 22YGM83NY4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Posterr/Info.plist;
+				INFOPLIST_FILE = Posterr/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
