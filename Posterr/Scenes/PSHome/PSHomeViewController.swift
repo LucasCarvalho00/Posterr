@@ -45,6 +45,7 @@ public final class PSHomeViewController: UIViewController {
         super.viewDidLoad()
         setup()
         viewModelProtocol?.initState()
+        self.title = "Teste"
     }
 
     // MARK: - Private Functions

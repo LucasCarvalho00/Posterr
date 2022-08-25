@@ -31,6 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private func presentStartFlow(windowScene: UIWindowScene) {
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = UINavigationController()
+
         if let navigationController = window?.rootViewController as? UINavigationController {
             let flowController = assembler.resolver.resolve(FlowController.self, argument: navigationController)
             flowController?.start()
@@ -45,7 +46,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
 
         let navBarAppearance = UINavigationBar.appearance()
-        navBarAppearance.standardAppearance = appearance;
+        navBarAppearance.standardAppearance = appearance
         navBarAppearance.scrollEdgeAppearance = navBarAppearance.standardAppearance
         navBarAppearance.tintColor = .white
         navBarAppearance.barTintColor = .white

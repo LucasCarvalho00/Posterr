@@ -38,6 +38,12 @@
 		7674558128B804CD00CC1F21 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7674558028B804CD00CC1F21 /* Images.xcassets */; };
 		7674558428B8072300CC1F21 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674558328B8072300CC1F21 /* Extension+UIView.swift */; };
 		7674558628B8086F00CC1F21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7674558528B8086F00CC1F21 /* Main.storyboard */; };
+		7674558A28B82A4400CC1F21 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674558928B82A4400CC1F21 /* RequestProtocol.swift */; };
+		7674558C28B82A4E00CC1F21 /* NetworkingRequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674558B28B82A4E00CC1F21 /* NetworkingRequestMethod.swift */; };
+		7674558E28B82A9F00CC1F21 /* NetworkOperationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674558D28B82A9F00CC1F21 /* NetworkOperationProtocol.swift */; };
+		7674559028B82AA900CC1F21 /* NetworkOperationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674558F28B82AA900CC1F21 /* NetworkOperationError.swift */; };
+		7674559228B82AB200CC1F21 /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674559128B82AB200CC1F21 /* NetworkOperation.swift */; };
+		7674559428B82AC500CC1F21 /* NetworkOperationDefaultParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7674559328B82AC500CC1F21 /* NetworkOperationDefaultParameters.swift */; };
 		F61767888BCF1C581DE69853 /* libPods-PosterrUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E0DE7C3074C56407CD9D80 /* libPods-PosterrUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +102,12 @@
 		7674558028B804CD00CC1F21 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7674558328B8072300CC1F21 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		7674558528B8086F00CC1F21 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		7674558928B82A4400CC1F21 /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
+		7674558B28B82A4E00CC1F21 /* NetworkingRequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingRequestMethod.swift; sourceTree = "<group>"; };
+		7674558D28B82A9F00CC1F21 /* NetworkOperationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkOperationProtocol.swift; sourceTree = "<group>"; };
+		7674558F28B82AA900CC1F21 /* NetworkOperationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkOperationError.swift; sourceTree = "<group>"; };
+		7674559128B82AB200CC1F21 /* NetworkOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
+		7674559328B82AC500CC1F21 /* NetworkOperationDefaultParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkOperationDefaultParameters.swift; sourceTree = "<group>"; };
 		7A5802BA81B8C861BDFF54F3 /* Pods-PosterrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PosterrUITests.debug.xcconfig"; path = "Target Support Files/Pods-PosterrUITests/Pods-PosterrUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		96E0DE7C3074C56407CD9D80 /* libPods-PosterrUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PosterrUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1DB91AA84ECAC0FC0D4A324 /* libPods-Posterr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Posterr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,6 +233,8 @@
 		7674553F28B6FF0700CC1F21 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				7674558728B829FB00CC1F21 /* Requests */,
+				7674558828B82A0000CC1F21 /* Networking */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -361,6 +375,26 @@
 				7674558328B8072300CC1F21 /* Extension+UIView.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7674558728B829FB00CC1F21 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				7674558928B82A4400CC1F21 /* RequestProtocol.swift */,
+				7674558B28B82A4E00CC1F21 /* NetworkingRequestMethod.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		7674558828B82A0000CC1F21 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				7674558D28B82A9F00CC1F21 /* NetworkOperationProtocol.swift */,
+				7674558F28B82AA900CC1F21 /* NetworkOperationError.swift */,
+				7674559128B82AB200CC1F21 /* NetworkOperation.swift */,
+				7674559328B82AC500CC1F21 /* NetworkOperationDefaultParameters.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -569,12 +603,15 @@
 				7674556F28B705BA00CC1F21 /* DependencyGraph.swift in Sources */,
 				7674557F28B804BC00CC1F21 /* Extension+UIImage.swift in Sources */,
 				7674558428B8072300CC1F21 /* Extension+UIView.swift in Sources */,
+				7674558A28B82A4400CC1F21 /* RequestProtocol.swift in Sources */,
 				7674555828B7021200CC1F21 /* PSUserProfileViewController.swift in Sources */,
 				7674557D28B8048C00CC1F21 /* Extension+UIColor.swift in Sources */,
 				7674556528B7022800CC1F21 /* PSHomeProtocol.swift in Sources */,
+				7674559028B82AA900CC1F21 /* NetworkOperationError.swift in Sources */,
 				7674557928B70C3800CC1F21 /* FlowController.swift in Sources */,
 				7674555A28B7021200CC1F21 /* PSUserProfileProtocol.swift in Sources */,
 				7674556428B7022800CC1F21 /* PSHomeViewController.swift in Sources */,
+				7674558E28B82A9F00CC1F21 /* NetworkOperationProtocol.swift in Sources */,
 				7674557528B705F500CC1F21 /* ScenesFactory.swift in Sources */,
 				7674556028B7021D00CC1F21 /* PSUserProfileViewProtocol.swift in Sources */,
 				7674556828B7022E00CC1F21 /* PSHomeViewEntity.swift in Sources */,
@@ -583,11 +620,14 @@
 				7674555F28B7021D00CC1F21 /* PSUserProfileView.swift in Sources */,
 				7674551128B6FBEA00CC1F21 /* SceneDelegate.swift in Sources */,
 				7674557128B705C900CC1F21 /* FoudationAssembly.swift in Sources */,
+				7674559228B82AB200CC1F21 /* NetworkOperation.swift in Sources */,
 				7674557728B705FC00CC1F21 /* ScenesFactoryProtocol.swift in Sources */,
 				7674556C28B7023300CC1F21 /* PSHomeView.swift in Sources */,
 				7674555C28B7021800CC1F21 /* PSUserProfileViewEntity.swift in Sources */,
+				7674559428B82AC500CC1F21 /* NetworkOperationDefaultParameters.swift in Sources */,
 				7674557328B705DC00CC1F21 /* ScenesAssembly.swift in Sources */,
 				7674556B28B7023300CC1F21 /* PSHomeViewProtocol.swift in Sources */,
+				7674558C28B82A4E00CC1F21 /* NetworkingRequestMethod.swift in Sources */,
 				7674556628B7022800CC1F21 /* PSHomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
