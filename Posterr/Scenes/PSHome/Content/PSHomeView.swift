@@ -89,7 +89,6 @@ final public class PSHomeView: UIView {
             textView.topAnchor.constraint(equalTo: spaceTextView.topAnchor, constant: PSMetrics.smallMargin),
             textView.bottomAnchor.constraint(equalTo: spaceTextView.bottomAnchor, constant: -PSMetrics.smallMargin),
             textView.leadingAnchor.constraint(equalTo: spaceTextView.leadingAnchor, constant: PSMetrics.smallMargin),
-            textView.heightAnchor.constraint(equalToConstant: Metrics.minimumTextViewHeight),
             
             circularButton.leadingAnchor.constraint(equalTo: textView.trailingAnchor, constant: PSMetrics.smallMargin),
             circularButton.trailingAnchor.constraint(equalTo: spaceTextView.trailingAnchor, constant: -PSMetrics.smallMargin),

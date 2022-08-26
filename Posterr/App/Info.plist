@@ -19,6 +19,12 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Graphik-Medium.ttf</string>	
+		<string>Graphik-Regular.ttf</string>	
+		<string>Graphik-Semibold.ttf</string>	
+	</array>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>

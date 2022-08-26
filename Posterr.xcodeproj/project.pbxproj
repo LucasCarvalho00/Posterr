@@ -66,6 +66,9 @@
 		767455CF28B847D900CC1F21 /* PutUserInformationUseCaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767455CE28B847D900CC1F21 /* PutUserInformationUseCaseResponse.swift */; };
 		767455D428B863E200CC1F21 /* PSCircularButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767455D328B863E200CC1F21 /* PSCircularButtonView.swift */; };
 		767455D628B863E900CC1F21 /* PSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767455D528B863E900CC1F21 /* PSTextView.swift */; };
+		76A29CF928B899D700B0AC61 /* Graphik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76A29CF728B894E800B0AC61 /* Graphik-Regular.ttf */; };
+		76A29CFA28B899DB00B0AC61 /* Graphik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76A29CF628B894E800B0AC61 /* Graphik-Medium.ttf */; };
+		76A29CFB28B899DD00B0AC61 /* Graphik-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76A29CF828B894E800B0AC61 /* Graphik-Semibold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,9 +128,6 @@
 		767455A228B83A1800CC1F21 /* putUserInformation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = putUserInformation.json; sourceTree = "<group>"; };
 		767455A528B83AC100CC1F21 /* PSMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSMetrics.swift; sourceTree = "<group>"; };
 		767455A828B83B3800CC1F21 /* PSFontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSFontSize.swift; sourceTree = "<group>"; };
-		767455AB28B83BBE00CC1F21 /* Graphik-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Semibold.otf"; sourceTree = "<group>"; };
-		767455AC28B83BBE00CC1F21 /* Graphik-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Regular.otf"; sourceTree = "<group>"; };
-		767455AD28B83BBE00CC1F21 /* Graphik-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Medium.otf"; sourceTree = "<group>"; };
 		767455AE28B83BEA00CC1F21 /* Extension+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIFont.swift"; sourceTree = "<group>"; };
 		767455B028B83C7700CC1F21 /* PSFontStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSFontStyle.swift; sourceTree = "<group>"; };
 		767455B228B8475800CC1F21 /* GetFeedMessageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFeedMessageUseCase.swift; sourceTree = "<group>"; };
@@ -146,6 +146,9 @@
 		767455CE28B847D900CC1F21 /* PutUserInformationUseCaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutUserInformationUseCaseResponse.swift; sourceTree = "<group>"; };
 		767455D328B863E200CC1F21 /* PSCircularButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSCircularButtonView.swift; sourceTree = "<group>"; };
 		767455D528B863E900CC1F21 /* PSTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSTextView.swift; sourceTree = "<group>"; };
+		76A29CF628B894E800B0AC61 /* Graphik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Medium.ttf"; sourceTree = "<group>"; };
+		76A29CF728B894E800B0AC61 /* Graphik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Regular.ttf"; sourceTree = "<group>"; };
+		76A29CF828B894E800B0AC61 /* Graphik-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Semibold.ttf"; sourceTree = "<group>"; };
 		7A5802BA81B8C861BDFF54F3 /* Pods-PosterrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PosterrUITests.debug.xcconfig"; path = "Target Support Files/Pods-PosterrUITests/Pods-PosterrUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		96E0DE7C3074C56407CD9D80 /* libPods-PosterrUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PosterrUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1DB91AA84ECAC0FC0D4A324 /* libPods-Posterr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Posterr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -515,9 +518,9 @@
 		767455AA28B83BAC00CC1F21 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				767455AD28B83BBE00CC1F21 /* Graphik-Medium.otf */,
-				767455AC28B83BBE00CC1F21 /* Graphik-Regular.otf */,
-				767455AB28B83BBE00CC1F21 /* Graphik-Semibold.otf */,
+				76A29CF628B894E800B0AC61 /* Graphik-Medium.ttf */,
+				76A29CF728B894E800B0AC61 /* Graphik-Regular.ttf */,
+				76A29CF828B894E800B0AC61 /* Graphik-Semibold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -632,7 +635,10 @@
 			files = (
 				7674559C28B8337700CC1F21 /* getFeed.json in Resources */,
 				767455A328B83A1800CC1F21 /* putUserInformation.json in Resources */,
+				76A29CFB28B899DD00B0AC61 /* Graphik-Semibold.ttf in Resources */,
+				76A29CFA28B899DB00B0AC61 /* Graphik-Medium.ttf in Resources */,
 				7674559D28B8337700CC1F21 /* getUserInformation.json in Resources */,
+				76A29CF928B899D700B0AC61 /* Graphik-Regular.ttf in Resources */,
 				7674558628B8086F00CC1F21 /* Main.storyboard in Resources */,
 				7674558128B804CD00CC1F21 /* Images.xcassets in Resources */,
 				7674551828B6FBEC00CC1F21 /* Colors.xcassets in Resources */,

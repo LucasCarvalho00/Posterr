@@ -31,6 +31,9 @@ public class PSTextView: UIView {
         let textField = UITextView()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.delegate = self
+        textField.isScrollEnabled = false
+        textField.sizeToFit()
+        textField.font = PSFontStyle.component
         return textField
     }()
     
@@ -73,8 +76,7 @@ public class PSTextView: UIView {
 
 extension PSTextView: UITextViewDelegate {
     public func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        print(text)
-        
+
         return true
     }
 }
