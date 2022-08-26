@@ -9,6 +9,18 @@ import RxSwift
 
 public final class PSHomeViewModel {
 
+    // MARK: - Constants
+
+    private struct Metrics { }
+    
+    private struct Constants {
+        static let dateMask = "yyyy-MM-dd"
+        static let dateDayMask = "dd"
+        static let dateMonthMask = "MMMM"
+        static let dateYearMask = "yyyy"
+    }
+
+    
     // MARK: - Public Attributes
 
     public weak var viewController: PSHomeViewControllerProtocol?
@@ -67,13 +79,17 @@ public final class PSHomeViewModel {
                 linkedMessage = PSHomeFeedLinkedMessageEntity(
                     userID: linkedMessageResponse.userID,
                     userAvatar: linkedMessageResponse.userAvatar,
-                    message: linkedMessageResponse.message)
+                    message: linkedMessageResponse.message,
+                    date: convertStringToFormatedDate(dateString: linkedMessageResponse.date)
+                )
             }
             
             let messageEntity = PSHomeFeedMessageEntity(
                 userID: messageResponse.userID,
                 userAvatar: messageResponse.userAvatar,
                 message: messageResponse.message,
+                date: convertStringToFormatedDate(dateString: messageResponse.date),
+                isMe: false,
                 typeOfMessage: PSHomeFeedMessageTypeEntity(rawValue: messageResponse.typeOfMessage.rawValue) ?? .normal,
                 linkedMessage: linkedMessage)
             
@@ -105,6 +121,21 @@ public final class PSHomeViewModel {
                 }
             })
             .disposed(by: disposeBag)
+    }
+    
+    private func convertStringToFormatedDate(dateString: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = Constants.dateMask
+        let date = dateFormatter.date(from: dateString) ?? Date()
+        
+        dateFormatter.dateFormat = Constants.dateYearMask
+        let year = dateFormatter.string(from: date)
+        dateFormatter.dateFormat = Constants.dateMonthMask
+        let month = dateFormatter.string(from: date)
+        dateFormatter.dateFormat = Constants.dateDayMask
+        let day = dateFormatter.string(from: date)
+    
+        return month.capitalized + " " + day + ", " + year
     }
 }
 

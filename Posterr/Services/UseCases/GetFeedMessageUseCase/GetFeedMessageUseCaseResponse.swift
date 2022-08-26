@@ -16,6 +16,7 @@ public struct GetFeedMessageResponse: Decodable {
     let userID: Int
     let userAvatar: String
     let message: String
+    let date: String
     let typeOfMessage: GetFeedMessageTypeResponse
     let linkedMessage: GetFeedLinkedMessageResponse?
 }
@@ -24,6 +25,7 @@ public struct GetFeedLinkedMessageResponse: Decodable {
     let userID: Int
     let userAvatar: String
     let message: String
+    let date: String
 }
 
 public enum GetFeedMessageTypeResponse: String, Decodable {
