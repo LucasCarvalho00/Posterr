@@ -62,9 +62,10 @@ enum FeedRequest: RequestProtocol {
             return "getFeed"
         case .getUserInformation:
             return "getUserInformation"
-        case .postFeedMessage,
-             .putUserInformation:
-            return nil
+        case .postFeedMessage:
+            return "postFeedMessage"
+        case .putUserInformation:
+            return "putUserInformation"
         }
     }
 }

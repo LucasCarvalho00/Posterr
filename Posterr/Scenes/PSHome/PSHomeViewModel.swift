@@ -49,6 +49,26 @@ public final class PSHomeViewModel {
             })
             .disposed(by: disposeBag)
     }
+    
+    private func makeEntityPostFeedMessage(message: String) {
+        let entity = PostFeedMessageUseCaseEntity(message: message)
+        callPostFeedMessageUseCaseProtocol(entity: entity)
+    }
+    
+    private func callPostFeedMessageUseCaseProtocol(entity: PostFeedMessageUseCaseEntity) {
+        postFeedMessageUseCaseProtocol
+            .execute(entity: entity)
+            .subscribe(onNext: { [weak self] result in
+                switch result {
+                case let .success(data):
+                    self?.viewController?.setupUI(with: .messageSentSuccessfully)
+                    print(data.message)
+                case let .failure(error):
+                    print(error)
+                }
+            })
+            .disposed(by: disposeBag)
+    }
 }
 
 // MARK: - Extensions
@@ -56,5 +76,9 @@ public final class PSHomeViewModel {
 extension PSHomeViewModel: PSHomeViewModelProtocol {
     public func initState() {
         initScreen()
+    }
+    
+    public func sendMessage(message: String) {
+        makeEntityPostFeedMessage(message: message)
     }
 }

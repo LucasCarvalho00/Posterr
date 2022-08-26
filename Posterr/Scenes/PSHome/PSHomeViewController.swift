@@ -70,4 +70,8 @@ extension PSHomeViewController: PSHomeViewControllerProtocol {
     }
 }
 
-extension PSHomeViewController: PSHomeViewViewControllerProtocol { }
+extension PSHomeViewController: PSHomeViewViewControllerProtocol {
+    public func sendMessage(message: String) {
+        viewModelProtocol?.sendMessage(message: message)
+    }
+}

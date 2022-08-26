@@ -69,6 +69,9 @@
 		76A29CF928B899D700B0AC61 /* Graphik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76A29CF728B894E800B0AC61 /* Graphik-Regular.ttf */; };
 		76A29CFA28B899DB00B0AC61 /* Graphik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76A29CF628B894E800B0AC61 /* Graphik-Medium.ttf */; };
 		76A29CFB28B899DD00B0AC61 /* Graphik-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76A29CF828B894E800B0AC61 /* Graphik-Semibold.ttf */; };
+		76A29CFD28B902E300B0AC61 /* PSCircularButtonViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A29CFC28B902E300B0AC61 /* PSCircularButtonViewDelegate.swift */; };
+		76A29CFF28B9037500B0AC61 /* PSTextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A29CFE28B9037500B0AC61 /* PSTextViewDelegate.swift */; };
+		76A29D0128B92FD300B0AC61 /* postFeedMessage.json in Resources */ = {isa = PBXBuildFile; fileRef = 76A29D0028B92FD300B0AC61 /* postFeedMessage.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +152,9 @@
 		76A29CF628B894E800B0AC61 /* Graphik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Medium.ttf"; sourceTree = "<group>"; };
 		76A29CF728B894E800B0AC61 /* Graphik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Regular.ttf"; sourceTree = "<group>"; };
 		76A29CF828B894E800B0AC61 /* Graphik-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Semibold.ttf"; sourceTree = "<group>"; };
+		76A29CFC28B902E300B0AC61 /* PSCircularButtonViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSCircularButtonViewDelegate.swift; sourceTree = "<group>"; };
+		76A29CFE28B9037500B0AC61 /* PSTextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSTextViewDelegate.swift; sourceTree = "<group>"; };
+		76A29D0028B92FD300B0AC61 /* postFeedMessage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = postFeedMessage.json; sourceTree = "<group>"; };
 		7A5802BA81B8C861BDFF54F3 /* Pods-PosterrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PosterrUITests.debug.xcconfig"; path = "Target Support Files/Pods-PosterrUITests/Pods-PosterrUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		96E0DE7C3074C56407CD9D80 /* libPods-PosterrUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PosterrUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1DB91AA84ECAC0FC0D4A324 /* libPods-Posterr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Posterr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -449,6 +455,7 @@
 			children = (
 				7674559A28B8337700CC1F21 /* getFeed.json */,
 				7674559B28B8337700CC1F21 /* getUserInformation.json */,
+				76A29D0028B92FD300B0AC61 /* postFeedMessage.json */,
 				767455A228B83A1800CC1F21 /* putUserInformation.json */,
 			);
 			path = Mocks;
@@ -538,6 +545,7 @@
 			isa = PBXGroup;
 			children = (
 				767455D328B863E200CC1F21 /* PSCircularButtonView.swift */,
+				76A29CFC28B902E300B0AC61 /* PSCircularButtonViewDelegate.swift */,
 			);
 			path = PSCircularButtonView;
 			sourceTree = "<group>";
@@ -546,6 +554,7 @@
 			isa = PBXGroup;
 			children = (
 				767455D528B863E900CC1F21 /* PSTextView.swift */,
+				76A29CFE28B9037500B0AC61 /* PSTextViewDelegate.swift */,
 			);
 			path = PSTextView;
 			sourceTree = "<group>";
@@ -642,6 +651,7 @@
 				7674558628B8086F00CC1F21 /* Main.storyboard in Resources */,
 				7674558128B804CD00CC1F21 /* Images.xcassets in Resources */,
 				7674551828B6FBEC00CC1F21 /* Colors.xcassets in Resources */,
+				76A29D0128B92FD300B0AC61 /* postFeedMessage.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -707,6 +717,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7674556F28B705BA00CC1F21 /* DependencyGraph.swift in Sources */,
+				76A29CFF28B9037500B0AC61 /* PSTextViewDelegate.swift in Sources */,
 				7674557F28B804BC00CC1F21 /* Extension+UIImage.swift in Sources */,
 				7674558428B8072300CC1F21 /* Extension+UIView.swift in Sources */,
 				7674558A28B82A4400CC1F21 /* RequestProtocol.swift in Sources */,
@@ -729,6 +740,7 @@
 				7674558E28B82A9F00CC1F21 /* NetworkOperationProtocol.swift in Sources */,
 				7674557528B705F500CC1F21 /* ScenesFactory.swift in Sources */,
 				7674556028B7021D00CC1F21 /* PSUserProfileViewProtocol.swift in Sources */,
+				76A29CFD28B902E300B0AC61 /* PSCircularButtonViewDelegate.swift in Sources */,
 				7674556828B7022E00CC1F21 /* PSHomeViewEntity.swift in Sources */,
 				767455C128B847A500CC1F21 /* PostFeedMessageUseCase.swift in Sources */,
 				767455D428B863E200CC1F21 /* PSCircularButtonView.swift in Sources */,

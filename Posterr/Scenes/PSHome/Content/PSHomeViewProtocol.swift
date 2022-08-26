@@ -11,11 +11,13 @@ import UIKit
 
 public enum PSHomeViewState: Equatable {
     case hasData(PSHomeViewEntity)
-    case isEmpty
+    case messageSentSuccessfully
 }
 // MARK: - ViewController
 
-public protocol PSHomeViewViewControllerProtocol: AnyObject { }
+public protocol PSHomeViewViewControllerProtocol: AnyObject {
+    func sendMessage(message: String)
+}
 
 // MARK: - View
 

@@ -14,11 +14,13 @@ final public class PSHomeView: UIView {
     private struct Metrics {
         static let minimumTextViewHeight: CGFloat = 24.0
         static let buttonViewSize: CGSize = CGSize(width: 30, height: 30)
+        static let maxStringMessage: Int = 777
     }
     
     private struct Constants {
+        static let counterText = "0/" + String(Metrics.maxStringMessage)
     }
-    
+        
     // MARK: - Delegates
     
     public weak var delegate: PSHomeViewViewControllerProtocol?
@@ -39,15 +41,25 @@ final public class PSHomeView: UIView {
         return view
     }()
     
+    private lazy var counterLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = PSFontStyle.smallComponent
+        label.text = Constants.counterText
+        return label
+    }()
+    
     private lazy var textView: PSTextView = {
         let textView = PSTextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.delegate = self
         return textView
     }()
     
     private lazy var circularButton: PSCircularButtonView = {
         let button = PSCircularButtonView()
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.delegate = self
         return button
     }()
     
@@ -73,6 +85,7 @@ final public class PSHomeView: UIView {
     private func buildViewHierarchy() {
         addSubview(contentView)
         contentView.addSubview(spaceTextView)
+        spaceTextView.addSubview(counterLabel)
         spaceTextView.addSubview(textView)
         spaceTextView.addSubview(circularButton)
     }
@@ -85,7 +98,10 @@ final public class PSHomeView: UIView {
             spaceTextView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             spaceTextView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             
-            textView.topAnchor.constraint(equalTo: spaceTextView.topAnchor, constant: PSMetrics.smallMargin),
+            counterLabel.topAnchor.constraint(equalTo: spaceTextView.topAnchor, constant: PSMetrics.smallMargin),
+            counterLabel.leadingAnchor.constraint(equalTo: spaceTextView.leadingAnchor, constant: PSMetrics.smallMargin),
+
+            textView.topAnchor.constraint(equalTo: counterLabel.bottomAnchor, constant: PSMetrics.tinyMargin),
             textView.bottomAnchor.constraint(equalTo: spaceTextView.bottomAnchor, constant: -PSMetrics.smallMargin),
             textView.leadingAnchor.constraint(equalTo: spaceTextView.leadingAnchor, constant: PSMetrics.smallMargin),
             
@@ -102,6 +118,10 @@ final public class PSHomeView: UIView {
     private func setup(data: PSHomeViewEntity) {
     
     }
+    
+    private func messageSentSuccessfully() {
+        textView.text = ""
+    }
 }
 
 // MARK: - Extension
@@ -111,8 +131,25 @@ extension PSHomeView: PSHomeViewProtocol {
         switch viewState {
         case let .hasData(data):
             setup(data: data)
-        case .isEmpty:
-            break
+        case .messageSentSuccessfully:
+            messageSentSuccessfully()
         }
+    }
+}
+
+extension PSHomeView: PSTextViewDelegate {
+    public func textViewDidChange(_ textView: UITextView) {
+        counterLabel.text = String(textView.text.count) + "/" + String(Metrics.maxStringMessage)
+    }
+}
+
+extension PSHomeView: PSCircularButtonViewDelegate {
+    public func didTap(sender: PSCircularButtonView) {
+        if textView.text.count == 0 {
+            textView.setHasError()
+            return
+        }
+        
+        delegate?.sendMessage(message: textView.text)
     }
 }

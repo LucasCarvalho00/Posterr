@@ -15,13 +15,11 @@ public class PSCircularButtonView: UIView {
         static let customMargin: CGFloat = 6.0
         static let animationTouch: CGFloat = 0.15
     }
-    
-    // MARK: - Public Attributes
-    
-    // MARK: - Private Attributes
         
     // MARK: - Delegate
-        
+
+    public var delegate: PSCircularButtonViewDelegate?
+    
     // MARK: - UI
     
     private lazy var contentView: UIView = {
@@ -77,30 +75,16 @@ public class PSCircularButtonView: UIView {
     // MARK: - Actions
     
     @objc private func didTap() {
-
+        delegate?.didTap(sender: self)
     }
     
     public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first, touch.view == contentView else {
-            return
-        }
         contentView.backgroundColor = .neutral60
     }
     
     public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first, touch.view == contentView else {
-            return
-        }
-        
-        UIView.animate(withDuration: Constants.animationTouch, animations: { () -> Void in
-            self.contentView.backgroundColor = .secondary
+        UIView.animate(withDuration: Constants.animationTouch, animations: { [weak self] () -> Void in
+            self?.contentView.backgroundColor = .secondary
         })
     }
-    
-    // MARK: - Private functions
-    
 }
-
-//MARK: - Extensions
-
-

@@ -14,13 +14,18 @@ public class PSTextView: UIView {
     private struct Constants {
         static let borderWidth: CGFloat = 1
     }
-    
-    // MARK: - Public Attributes
-    
-    // MARK: - Private Attributes
-        
+            
     // MARK: - Delegate
         
+    public var delegate: PSTextViewDelegate?
+    
+    // MARK: - Delegate
+
+    public var text: String {
+        get { textFieldView.text }
+        set { textFieldView.text = newValue }
+    }
+    
     // MARK: - UI
     
     private lazy var contentView: UIView = {
@@ -74,6 +79,12 @@ public class PSTextView: UIView {
     }
     
     
+    // MARK: - Public functions
+
+    public func setHasError() {
+        textFieldView.layer.borderColor = UIColor.secondary.cgColor
+    }
+    
     // MARK: - Private functions
     
     private func setFocusState() {
@@ -100,9 +111,7 @@ extension PSTextView: UITextViewDelegate {
         setNormalState()
     }
 
-    
-    public func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-
-        return true
+    public func textViewDidChange(_ textView: UITextView) {
+        delegate?.textViewDidChange(textView)
     }
 }

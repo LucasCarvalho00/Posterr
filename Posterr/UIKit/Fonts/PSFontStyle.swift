@@ -15,8 +15,8 @@ public struct PSFontStyle {
     /// Font Graphik with size 14.0
     static let description = UIFont.graphik.withSize(PSFontSize.medium.size)
     
-    /// Font Graphik with size 14.0
-    static let smallComponent = UIFont.graphik.withSize(PSFontSize.medium.size)
+    /// Font Graphik with size 8.0
+    static let smallComponent = UIFont.graphik.withSize(PSFontSize.small.size)
     
     /// Font Graphik with size 14.0
     static let component = UIFont.graphik.withSize(PSFontSize.medium.size)

@@ -15,7 +15,7 @@ enum PSFontSize {
     var size: CGFloat {
         switch self {
         case .small:
-            return 12
+            return 8
         case .medium:
             return 14
         case .large:
