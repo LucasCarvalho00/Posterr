@@ -13,7 +13,12 @@ final class ScenesAssembly: Assembly {
         // MARK: - PSHomeView
         
         container.register(PSHomeViewModelProtocol.self) { resolver in
-            PSHomeViewModel()
+            let getFeedMessageUseCaseProtocol = resolver.resolve(GetFeedMessageUseCaseProtocol.self)!
+            let postFeedMessageUseCaseProtocol = resolver.resolve(PostFeedMessageUseCaseProtocol.self)!
+
+            return PSHomeViewModel(
+                getFeedMessageUseCaseProtocol: getFeedMessageUseCaseProtocol,
+                postFeedMessageUseCaseProtocol: postFeedMessageUseCaseProtocol)
         }
         
         container.register(PSHomeViewProtocol.self) { resolver in
@@ -31,7 +36,12 @@ final class ScenesAssembly: Assembly {
         // MARK: - PSUserProfile
         
         container.register(PSUserProfileViewModelProtocol.self) { resolver in
-            PSUserProfileViewModel()
+            let getUserInformationUseCaseProtocol = resolver.resolve(GetUserInformationUseCaseProtocol.self)!
+            let putUserInformationUseCaseProtocol = resolver.resolve(PutUserInformationUseCaseProtocol.self)!
+            
+            return PSUserProfileViewModel(
+                getUserInformationUseCaseProtocol: getUserInformationUseCaseProtocol,
+                putUserInformationUseCaseProtocol: putUserInformationUseCaseProtocol)
         }
         
         container.register(PSUserProfileViewProtocol.self) { resolver in

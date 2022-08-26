@@ -12,10 +12,19 @@ public final class PSUserProfileViewModel {
     public weak var viewController: PSUserProfileViewControllerProtocol?
     var entity: PSUserProfileViewEntity?
 
+    // MARK: - Private Properties
+
+    private let getUserInformationUseCaseProtocol: GetUserInformationUseCaseProtocol
+    private let putUserInformationUseCaseProtocol: PutUserInformationUseCaseProtocol
+
     // MARK: - Initializer
 
-    public init() {
-
+    public init(
+        getUserInformationUseCaseProtocol: GetUserInformationUseCaseProtocol,
+        putUserInformationUseCaseProtocol: PutUserInformationUseCaseProtocol
+    ) {
+        self.getUserInformationUseCaseProtocol = getUserInformationUseCaseProtocol
+        self.putUserInformationUseCaseProtocol = putUserInformationUseCaseProtocol
     }
     
     // MARK: - Private Functions

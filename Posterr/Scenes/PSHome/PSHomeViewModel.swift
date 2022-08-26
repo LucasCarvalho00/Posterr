@@ -12,10 +12,19 @@ public final class PSHomeViewModel {
     public weak var viewController: PSHomeViewControllerProtocol?
     var entity: PSHomeViewEntity?
 
+    // MARK: - Private Properties
+
+    private let getFeedMessageUseCaseProtocol: GetFeedMessageUseCaseProtocol
+    private let postFeedMessageUseCaseProtocol: PostFeedMessageUseCaseProtocol
+
     // MARK: - Initializer
 
-    public init() {
-
+    public init(
+        getFeedMessageUseCaseProtocol: GetFeedMessageUseCaseProtocol,
+        postFeedMessageUseCaseProtocol: PostFeedMessageUseCaseProtocol
+    ) {
+        self.getFeedMessageUseCaseProtocol = getFeedMessageUseCaseProtocol
+        self.postFeedMessageUseCaseProtocol = postFeedMessageUseCaseProtocol
     }
     
     // MARK: - Private Functions
