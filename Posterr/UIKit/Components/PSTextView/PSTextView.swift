@@ -26,6 +26,8 @@ public class PSTextView: UIView {
         set { textFieldView.text = newValue }
     }
     
+    public var maxOfStrings: Int = 0
+    
     // MARK: - UI
     
     private lazy var contentView: UIView = {
@@ -103,6 +105,18 @@ public class PSTextView: UIView {
 //MARK: - Extensions
 
 extension PSTextView: UITextViewDelegate {
+    public func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if maxOfStrings == 0 {
+            return true
+        }
+        
+        if textView.text.count >= maxOfStrings {
+            return false
+        }
+        
+        return true
+    }
+    
     public func textViewDidBeginEditing(_ textField: UITextView) {
         setFocusState()
     }

@@ -56,6 +56,7 @@ public final class PSHomeDataView: UIView {
         let textView = PSTextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.delegate = self
+        textView.maxOfStrings = Metrics.maxStringMessage
         return textView
     }()
     

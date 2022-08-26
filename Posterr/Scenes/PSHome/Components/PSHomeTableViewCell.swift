@@ -114,6 +114,10 @@ public final class PSHomeTableViewCell: UITableViewCell {
     public func setupUI(data: PSHomeFeedMessageEntity) {
         messageView.setupMessage(message: data.message, date: data.date)
         setupImage(photoURL: data.userAvatar)
+        
+        if let linkedMessage = data.linkedMessage {
+            
+        }
     }
     
     // MARK: - Private Functions
