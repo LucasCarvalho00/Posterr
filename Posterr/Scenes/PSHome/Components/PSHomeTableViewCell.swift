@@ -12,6 +12,10 @@ public final class PSHomeTableViewCell: UITableViewCell {
     // MARK: - Private Attributes
 
     private var task: URLSessionDataTask?
+    private var imageLeadingConstraint: NSLayoutConstraint? = nil
+    private var imageTrailingConstraint: NSLayoutConstraint? = nil
+    private var stackLeadingConstraint: NSLayoutConstraint? = nil
+    private var stackTrailingConstraint: NSLayoutConstraint? = nil
 
     // MARK: - Constants
 
@@ -93,27 +97,55 @@ public final class PSHomeTableViewCell: UITableViewCell {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             userImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: PSMetrics.mediumMargin),
-            userImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: PSMetrics.smallMargin),
             userImageView.heightAnchor.constraint(equalToConstant: Metrics.userImageSize.height),
             userImageView.widthAnchor.constraint(equalToConstant: Metrics.userImageSize.width),
             
             stackContentView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: PSMetrics.mediumMargin),
             stackContentView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -PSMetrics.mediumMargin),
-            stackContentView.leadingAnchor.constraint(equalTo: userImageView.trailingAnchor, constant: PSMetrics.mediumMargin),
-            stackContentView.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -PSMetrics.mediumMargin),
 
             messageView.topAnchor.constraint(equalTo: customContentView.topAnchor, constant: PSMetrics.smallMargin),
             messageView.bottomAnchor.constraint(equalTo: customContentView.bottomAnchor, constant: -PSMetrics.smallMargin),
             messageView.leadingAnchor.constraint(equalTo: customContentView.leadingAnchor, constant: PSMetrics.smallMargin),
-            messageView.trailingAnchor.constraint(equalTo: customContentView.trailingAnchor, constant: -PSMetrics.smallMargin),
+            messageView.trailingAnchor.constraint(equalTo: customContentView.trailingAnchor, constant: -PSMetrics.smallMargin)
         ])
     }
+    
+    private func setupNormalConstraint() {
+        imageLeadingConstraint = userImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: PSMetrics.smallMargin)
+        imageTrailingConstraint = nil
+        stackLeadingConstraint = stackContentView.leadingAnchor.constraint(equalTo: userImageView.trailingAnchor, constant: PSMetrics.mediumMargin)
+        stackTrailingConstraint = stackContentView.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -PSMetrics.mediumMargin)
+   
+        imageLeadingConstraint?.isActive = true
+        imageTrailingConstraint?.isActive = true
+        stackLeadingConstraint?.isActive = true
+        stackTrailingConstraint?.isActive = true
+    }
+    
+    private func setupIsMeConstraint() {
+        imageLeadingConstraint = nil
+        imageTrailingConstraint = userImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -PSMetrics.smallMargin)
+        stackLeadingConstraint = stackContentView.leadingAnchor.constraint(greaterThanOrEqualTo: contentView.leadingAnchor, constant: PSMetrics.mediumMargin)
+        stackTrailingConstraint = stackContentView.trailingAnchor.constraint(equalTo: userImageView.leadingAnchor, constant: -PSMetrics.mediumMargin)
+   
+        imageLeadingConstraint?.isActive = true
+        imageTrailingConstraint?.isActive = true
+        stackLeadingConstraint?.isActive = true
+        stackTrailingConstraint?.isActive = true
+    }
+    
     
     // MARK: - Public Functions
 
     public func setupUI(data: PSHomeFeedMessageEntity) {
         messageView.setupMessage(message: data.message, date: data.date)
         setupImage(photoURL: data.userAvatar)
+        
+        if data.isMe {
+            setupIsMeConstraint()
+        } else {
+            setupNormalConstraint()
+        }
         
         if let linkedMessage = data.linkedMessage {
             
