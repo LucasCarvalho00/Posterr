@@ -9,7 +9,7 @@ public struct GetFeedMessageUseCaseResponse: Decodable {
     let page: Int
     let totalPages: Int
     let totalResults: Int
-    let feeds: [GetFeedMessageResponse]
+    let feeds: [GetFeedMessageResponse]?
 }
 
 public struct GetFeedMessageResponse: Decodable {

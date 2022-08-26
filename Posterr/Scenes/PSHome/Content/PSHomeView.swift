@@ -7,19 +7,13 @@
 
 import UIKit
 
-final public class PSHomeView: UIView {
+public final class PSHomeView: UIView {
     
     // MARK: - Constants
 
-    private struct Metrics {
-        static let minimumTextViewHeight: CGFloat = 24.0
-        static let buttonViewSize: CGSize = CGSize(width: 30, height: 30)
-        static let maxStringMessage: Int = 777
-    }
+    private struct Metrics { }
     
-    private struct Constants {
-        static let counterText = "0/" + String(Metrics.maxStringMessage)
-    }
+    private struct Constants { }
         
     // MARK: - Delegates
     
@@ -34,33 +28,29 @@ final public class PSHomeView: UIView {
         return view
     }()
     
-    private lazy var spaceTextView: UIView = {
-        let view = UIView()
+    private lazy var loadView: PSHomeLoadView = {
+        let view = PSHomeLoadView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .neutral30
         return view
     }()
     
-    private lazy var counterLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = PSFontStyle.smallComponent
-        label.text = Constants.counterText
-        return label
+    private lazy var dataView: PSHomeDataView = {
+        let view = PSHomeDataView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .neutral30
+        view.delegate = self
+        view.isHidden = true
+        return view
     }()
     
-    private lazy var textView: PSTextView = {
-        let textView = PSTextView()
-        textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.delegate = self
-        return textView
-    }()
-    
-    private lazy var circularButton: PSCircularButtonView = {
-        let button = PSCircularButtonView()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.delegate = self
-        return button
+    private lazy var errorView: PSHomeErrorView = {
+        let view = PSHomeErrorView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .neutral30
+        view.delegate = self
+        view.isHidden = true
+        return view
     }()
     
     // MARK: - Life Cyle
@@ -68,6 +58,7 @@ final public class PSHomeView: UIView {
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
         setup()
+        self.backgroundColor = .neutral30
     }
 
     @available (*, unavailable)
@@ -83,44 +74,55 @@ final public class PSHomeView: UIView {
     }
     
     private func buildViewHierarchy() {
-        addSubview(contentView)
-        contentView.addSubview(spaceTextView)
-        spaceTextView.addSubview(counterLabel)
-        spaceTextView.addSubview(textView)
-        spaceTextView.addSubview(circularButton)
+        addSubview(contentView)        
+        contentView.addSubview(loadView)
+        contentView.addSubview(dataView)
+        contentView.addSubview(errorView)
     }
     
     private func addConstraints() {
-        contentView.constraintToSuperview()
+        contentView.constraintToSafeArea()
         
-        NSLayoutConstraint.activate([
-            spaceTextView.bottomAnchor.constraint(equalTo: self.safeBottomAnchor),
-            spaceTextView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            spaceTextView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+        NSLayoutConstraint.activate([            
+            loadView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            loadView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            loadView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            loadView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             
-            counterLabel.topAnchor.constraint(equalTo: spaceTextView.topAnchor, constant: PSMetrics.smallMargin),
-            counterLabel.leadingAnchor.constraint(equalTo: spaceTextView.leadingAnchor, constant: PSMetrics.smallMargin),
-
-            textView.topAnchor.constraint(equalTo: counterLabel.bottomAnchor, constant: PSMetrics.tinyMargin),
-            textView.bottomAnchor.constraint(equalTo: spaceTextView.bottomAnchor, constant: -PSMetrics.smallMargin),
-            textView.leadingAnchor.constraint(equalTo: spaceTextView.leadingAnchor, constant: PSMetrics.smallMargin),
+            dataView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            dataView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            dataView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            dataView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             
-            circularButton.leadingAnchor.constraint(equalTo: textView.trailingAnchor, constant: PSMetrics.mediumMargin),
-            circularButton.trailingAnchor.constraint(equalTo: spaceTextView.trailingAnchor, constant: -PSMetrics.mediumMargin),
-            circularButton.heightAnchor.constraint(equalToConstant: Metrics.buttonViewSize.height),
-            circularButton.widthAnchor.constraint(equalToConstant: Metrics.buttonViewSize.width),
-            circularButton.centerYAnchor.constraint(equalTo: textView.centerYAnchor)
+            errorView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            errorView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            errorView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            errorView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
     }
     
     // MARK: - Private Functions
     
-    private func setup(data: PSHomeViewEntity) {
+    private func setupLoad() {
+        loadView.isHidden = false
+        dataView.isHidden = true
+        errorView.isHidden = true
+    }
     
+    private func setupData(data: PSHomeViewEntity) {
+        loadView.isHidden = true
+        dataView.isHidden = false
+        errorView.isHidden = true
+    }
+    
+    private func setupError() {
+        loadView.isHidden = true
+        dataView.isHidden = true
+        errorView.isHidden = false
     }
     
     private func messageSentSuccessfully() {
-        textView.text = ""
+        dataView.messageSentSuccessfully()
     }
 }
 
@@ -130,26 +132,25 @@ extension PSHomeView: PSHomeViewProtocol {
     public func setupUI(with viewState: PSHomeViewState) {
         switch viewState {
         case let .hasData(data):
-            setup(data: data)
+            setupData(data: data)
+        case .hasError:
+            setupError()
+        case .loadScreen:
+            setupLoad()
         case .messageSentSuccessfully:
             messageSentSuccessfully()
         }
     }
 }
 
-extension PSHomeView: PSTextViewDelegate {
-    public func textViewDidChange(_ textView: UITextView) {
-        counterLabel.text = String(textView.text.count) + "/" + String(Metrics.maxStringMessage)
+extension PSHomeView: PSHomeErrorViewDelegate {
+    public func didTapReload() {
+        delegate?.didTapReload()
     }
 }
 
-extension PSHomeView: PSCircularButtonViewDelegate {
-    public func didTap(sender: PSCircularButtonView) {
-        if textView.text.count == 0 {
-            textView.setHasError()
-            return
-        }
-        
-        delegate?.sendMessage(message: textView.text)
+extension PSHomeView: PSHomeDataViewProtocol {
+    public func sendMessage(message: String) {
+        delegate?.sendMessage(message: message)
     }
 }

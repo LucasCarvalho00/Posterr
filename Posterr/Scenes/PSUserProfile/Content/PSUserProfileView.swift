@@ -7,7 +7,7 @@
 
 import UIKit
 
-final public class PSUserProfileView: UIView {
+public final class PSUserProfileView: UIView {
     
     // MARK: - Constants
 

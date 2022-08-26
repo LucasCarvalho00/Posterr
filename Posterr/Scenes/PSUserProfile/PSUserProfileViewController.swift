@@ -10,13 +10,10 @@ import UIKit
 
 public final class PSUserProfileViewController: UIViewController {
 
-    // MARK: - Properties
-    
+    // MARK: - Public Attributes
+
     public let viewProtocol: PSUserProfileViewProtocol?
     public let viewModelProtocol: PSUserProfileViewModelProtocol?
-
-    // MARK: - Public Attributes
-    
     public var flowProtocol: PSUserProfileViewFlowProtocol?
 
     // MARK: - Initializer

@@ -11,11 +11,14 @@ import UIKit
 
 public enum PSHomeViewState: Equatable {
     case hasData(PSHomeViewEntity)
+    case hasError
+    case loadScreen
     case messageSentSuccessfully
 }
 // MARK: - ViewController
 
 public protocol PSHomeViewViewControllerProtocol: AnyObject {
+    func didTapReload()
     func sendMessage(message: String)
 }
 
@@ -31,4 +34,16 @@ public protocol PSHomeViewProtocol: AnyObject {
 
 extension PSHomeViewProtocol where Self: UIView {
     public var content: UIView { return self }
+}
+
+// MARK: - PSHomeDataView
+
+public protocol PSHomeDataViewProtocol: AnyObject {
+    func sendMessage(message: String)
+}
+
+// MARK: - PSHomeErrorView
+
+public protocol PSHomeErrorViewDelegate: AnyObject {
+    func didTapReload()
 }

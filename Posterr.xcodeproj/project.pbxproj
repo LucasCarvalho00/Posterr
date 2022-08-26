@@ -72,6 +72,10 @@
 		76A29CFD28B902E300B0AC61 /* PSCircularButtonViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A29CFC28B902E300B0AC61 /* PSCircularButtonViewDelegate.swift */; };
 		76A29CFF28B9037500B0AC61 /* PSTextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A29CFE28B9037500B0AC61 /* PSTextViewDelegate.swift */; };
 		76A29D0128B92FD300B0AC61 /* postFeedMessage.json in Resources */ = {isa = PBXBuildFile; fileRef = 76A29D0028B92FD300B0AC61 /* postFeedMessage.json */; };
+		76A29D0628B9550000B0AC61 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 76A29D0428B9550000B0AC61 /* Localizable.strings */; };
+		76A29D0A28B9575400B0AC61 /* PSHomeDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A29D0928B9575400B0AC61 /* PSHomeDataView.swift */; };
+		76A29D0C28B9575F00B0AC61 /* PSHomeErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A29D0B28B9575F00B0AC61 /* PSHomeErrorView.swift */; };
+		76A29D0E28B9579200B0AC61 /* PSHomeLoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A29D0D28B9579200B0AC61 /* PSHomeLoadView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +159,10 @@
 		76A29CFC28B902E300B0AC61 /* PSCircularButtonViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSCircularButtonViewDelegate.swift; sourceTree = "<group>"; };
 		76A29CFE28B9037500B0AC61 /* PSTextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSTextViewDelegate.swift; sourceTree = "<group>"; };
 		76A29D0028B92FD300B0AC61 /* postFeedMessage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = postFeedMessage.json; sourceTree = "<group>"; };
+		76A29D0528B9550000B0AC61 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = Localizable.strings; sourceTree = "<group>"; };
+		76A29D0928B9575400B0AC61 /* PSHomeDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSHomeDataView.swift; sourceTree = "<group>"; };
+		76A29D0B28B9575F00B0AC61 /* PSHomeErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSHomeErrorView.swift; sourceTree = "<group>"; };
+		76A29D0D28B9579200B0AC61 /* PSHomeLoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSHomeLoadView.swift; sourceTree = "<group>"; };
 		7A5802BA81B8C861BDFF54F3 /* Pods-PosterrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PosterrUITests.debug.xcconfig"; path = "Target Support Files/Pods-PosterrUITests/Pods-PosterrUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		96E0DE7C3074C56407CD9D80 /* libPods-PosterrUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PosterrUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1DB91AA84ECAC0FC0D4A324 /* libPods-Posterr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Posterr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -299,6 +307,7 @@
 		7674554328B6FF3600CC1F21 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				76A29D0228B9545500B0AC61 /* Localized */,
 				7674557A28B8046C00CC1F21 /* Colors */,
 				767455D028B8631900CC1F21 /* Components */,
 				7674558228B8071700CC1F21 /* Extensions */,
@@ -322,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				7674555028B7015800CC1F21 /* Content */,
+				76A29D0728B9566200B0AC61 /* Components */,
 				7674555128B7015D00CC1F21 /* Entity */,
 				7674556228B7022800CC1F21 /* PSHomeProtocol.swift */,
 				7674556128B7022800CC1F21 /* PSHomeViewController.swift */,
@@ -559,6 +569,32 @@
 			path = PSTextView;
 			sourceTree = "<group>";
 		};
+		76A29D0228B9545500B0AC61 /* Localized */ = {
+			isa = PBXGroup;
+			children = (
+				76A29D0328B954E600B0AC61 /* pt-BR.lproj */,
+			);
+			path = Localized;
+			sourceTree = "<group>";
+		};
+		76A29D0328B954E600B0AC61 /* pt-BR.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				76A29D0428B9550000B0AC61 /* Localizable.strings */,
+			);
+			path = "pt-BR.lproj";
+			sourceTree = "<group>";
+		};
+		76A29D0728B9566200B0AC61 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				76A29D0928B9575400B0AC61 /* PSHomeDataView.swift */,
+				76A29D0D28B9579200B0AC61 /* PSHomeLoadView.swift */,
+				76A29D0B28B9575F00B0AC61 /* PSHomeErrorView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -625,6 +661,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 7674550228B6FBEA00CC1F21;
 			productRefGroup = 7674550C28B6FBEA00CC1F21 /* Products */;
@@ -644,6 +681,7 @@
 			files = (
 				7674559C28B8337700CC1F21 /* getFeed.json in Resources */,
 				767455A328B83A1800CC1F21 /* putUserInformation.json in Resources */,
+				76A29D0628B9550000B0AC61 /* Localizable.strings in Resources */,
 				76A29CFB28B899DD00B0AC61 /* Graphik-Semibold.ttf in Resources */,
 				76A29CFA28B899DB00B0AC61 /* Graphik-Medium.ttf in Resources */,
 				7674559D28B8337700CC1F21 /* getUserInformation.json in Resources */,
@@ -727,7 +765,9 @@
 				7674557D28B8048C00CC1F21 /* Extension+UIColor.swift in Sources */,
 				767455C728B847B800CC1F21 /* PostFeedMessageUseCaseEntity.swift in Sources */,
 				7674556528B7022800CC1F21 /* PSHomeProtocol.swift in Sources */,
+				76A29D0A28B9575400B0AC61 /* PSHomeDataView.swift in Sources */,
 				7674559028B82AA900CC1F21 /* NetworkOperationError.swift in Sources */,
+				76A29D0C28B9575F00B0AC61 /* PSHomeErrorView.swift in Sources */,
 				7674557928B70C3800CC1F21 /* FlowController.swift in Sources */,
 				767455B128B83C7700CC1F21 /* PSFontStyle.swift in Sources */,
 				767455BB28B8478A00CC1F21 /* GetUserInformationUseCase.swift in Sources */,
@@ -751,6 +791,7 @@
 				7674551128B6FBEA00CC1F21 /* SceneDelegate.swift in Sources */,
 				767455BF28B8479A00CC1F21 /* GetUserInformationUseCaseResponse.swift in Sources */,
 				767455A928B83B3800CC1F21 /* PSFontSize.swift in Sources */,
+				76A29D0E28B9579200B0AC61 /* PSHomeLoadView.swift in Sources */,
 				767455C528B847B100CC1F21 /* PostFeedMessageUseCaseResponse.swift in Sources */,
 				7674557128B705C900CC1F21 /* FoudationAssembly.swift in Sources */,
 				7674559228B82AB200CC1F21 /* NetworkOperation.swift in Sources */,
@@ -788,6 +829,17 @@
 			targetProxy = 7674552228B6FBEC00CC1F21 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		76A29D0428B9550000B0AC61 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				76A29D0528B9550000B0AC61 /* pt-BR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		7674553328B6FBEC00CC1F21 /* Debug */ = {

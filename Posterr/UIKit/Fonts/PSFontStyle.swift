@@ -9,8 +9,8 @@ import UIKit
 
 public struct PSFontStyle {
     
-    /// Font Graphik with size 14.0
-    static let title = UIFont.graphik.withSize(PSFontSize.medium.size)
+    /// Font Graphik Semi Bold with size 13.0
+    static let title = UIFont.graphikSemibold.withSize(PSFontSize.large.size)
     
     /// Font Graphik with size 14.0
     static let description = UIFont.graphik.withSize(PSFontSize.medium.size)

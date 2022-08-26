@@ -10,13 +10,16 @@ import UIKit
 
 public final class PSHomeViewController: UIViewController {
 
-    // MARK: - Properties
+    // MARK: - Constants
+
+    private struct Constants {
+        static let title: String = NSLocalizedString("Home screen", comment: "")
+    }
     
+    // MARK: - Public Attributes
+
     public let viewProtocol: PSHomeViewProtocol?
     public let viewModelProtocol: PSHomeViewModelProtocol?
-
-    // MARK: - Public Attributes
-    
     public var flowProtocol: PSHomeViewFlowProtocol?
 
     // MARK: - Initializer
@@ -45,7 +48,7 @@ public final class PSHomeViewController: UIViewController {
         super.viewDidLoad()
         setup()
         viewModelProtocol?.initState()
-        self.title = "Teste"
+        self.title = Constants.title
     }
 
     // MARK: - Private Functions
@@ -71,6 +74,10 @@ extension PSHomeViewController: PSHomeViewControllerProtocol {
 }
 
 extension PSHomeViewController: PSHomeViewViewControllerProtocol {
+    public func didTapReload() {
+        viewModelProtocol?.initState()
+    }
+    
     public func sendMessage(message: String) {
         viewModelProtocol?.sendMessage(message: message)
     }

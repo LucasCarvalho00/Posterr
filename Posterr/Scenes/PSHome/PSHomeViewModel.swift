@@ -33,6 +33,7 @@ public final class PSHomeViewModel {
     // MARK: - Private Functions
     
     private func initScreen() {
+        viewController?.setupUI(with: .loadScreen)
         callGetFeedMessageUseCase()
     }
     
@@ -42,12 +43,48 @@ public final class PSHomeViewModel {
             .subscribe(onNext: { [weak self] result in
                 switch result {
                 case let .success(data):
-                    print("data")
+                    guard let entity = self?.makePSHomeViewEntity(response: data) else {
+                        return
+                    }
+                    
+                    self?.viewController?.setupUI(with: .hasData(entity))
+                    print("List received successfully")
                 case let .failure(error):
+                    self?.viewController?.setupUI(with: .hasError)
                     print(error)
                 }
             })
             .disposed(by: disposeBag)
+    }
+    
+    private func makePSHomeViewEntity(response: GetFeedMessageUseCaseResponse) -> PSHomeViewEntity {
+        var feeds: [PSHomeFeedMessageEntity]? = []
+        
+        response.feeds?.forEach({ messageResponse in
+            var linkedMessage: PSHomeFeedLinkedMessageEntity?
+            
+            if let linkedMessageResponse = messageResponse.linkedMessage {
+                linkedMessage = PSHomeFeedLinkedMessageEntity(
+                    userID: linkedMessageResponse.userID,
+                    userAvatar: linkedMessageResponse.userAvatar,
+                    message: linkedMessageResponse.message)
+            }
+            
+            let messageEntity = PSHomeFeedMessageEntity(
+                userID: messageResponse.userID,
+                userAvatar: messageResponse.userAvatar,
+                message: messageResponse.message,
+                typeOfMessage: PSHomeFeedMessageTypeEntity(rawValue: messageResponse.typeOfMessage.rawValue) ?? .normal,
+                linkedMessage: linkedMessage)
+            
+            feeds?.append(messageEntity)
+        })
+        
+        return PSHomeViewEntity(
+            page: response.page,
+            totalPages: response.totalPages,
+            totalResults: response.totalResults,
+            feeds: feeds)
     }
     
     private func makeEntityPostFeedMessage(message: String) {
