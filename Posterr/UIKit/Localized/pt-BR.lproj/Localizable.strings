@@ -1,0 +1,9 @@
+// MARK: - PSHomeView
+
+"Home screen" = "Tela inicial";
+
+// MARK: - PSHomeErrorView
+
+"Reload information" = "Recarregar informações";
+"It was not possible to display the information at this time. How about trying again?" = "No momento não foi possível mostrar as informações. Que tal tentar novamente?";
+"RELOAD" = "RECARREGAR";
