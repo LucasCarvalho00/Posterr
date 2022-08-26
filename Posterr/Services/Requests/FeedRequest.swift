@@ -11,8 +11,8 @@ enum FeedRequest: RequestProtocol {
     
     case getFeedMessage
     case getUserInformation
-    case postFeedMessage
-    case putUserInformation
+    case postFeedMessage(PostFeedMessageUseCaseEntity)
+    case putUserInformation(PutUserInformationUseCaseEntity)
 
     // MARK: - Properties
     
@@ -42,7 +42,14 @@ enum FeedRequest: RequestProtocol {
     }
     
     var parameters: [String: String]? {
-        return nil
+        switch self {
+        case let .postFeedMessage(postFeedMessageUseCaseEntity):
+            return ["newMessage": postFeedMessageUseCaseEntity.message]
+        case let .putUserInformation(putUserInformationUseCaseEntity):
+            return ["newUserName": putUserInformationUseCaseEntity.userName]
+        case .getFeedMessage, .getUserInformation:
+            return nil
+        }
     }
     
     var headers: [String: String]? {
