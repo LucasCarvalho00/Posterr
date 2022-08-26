@@ -22,5 +22,11 @@ final class FoudationAssembly: Assembly {
             let factory = resolver.resolve(ScenesFactoryProtocol.self)!
             return FlowController(navigationController: navigationController, factory: factory)
         }
+        
+        // MARK: - NetworkOperation
+        
+        container.register(NetworkOperationProtocol.self) { (_: Resolver, mockData: String?) in
+            return NetworkOperation(mockData: mockData)
+        }
     }
 }

@@ -45,5 +45,33 @@ final class ScenesAssembly: Assembly {
             viewModel.viewController = viewController
             return viewController
         }
+        
+        // MARK: - GetFeedMessageUseCase
+
+        container.register(GetFeedMessageUseCaseProtocol.self) { resolver in
+            let networkManager = resolver.resolve(NetworkOperationProtocol.self)!
+            return GetFeedMessageUseCase(networking: networkManager)
+        }
+        
+        // MARK: - GetUserInformationUseCase
+
+        container.register( GetUserInformationUseCaseProtocol.self) { resolver in
+            let networkManager = resolver.resolve(NetworkOperationProtocol.self)!
+            return  GetUserInformationUseCase(networking: networkManager)
+        }
+        
+        // MARK: - PostFeedMessageUseCase
+
+        container.register(PostFeedMessageUseCaseProtocol.self) { resolver in
+            let networkManager = resolver.resolve(NetworkOperationProtocol.self)!
+            return PostFeedMessageUseCase(networking: networkManager)
+        }
+        
+        // MARK: - PutUserInformationUseCase
+
+        container.register(PutUserInformationUseCaseProtocol.self) { resolver in
+            let networkManager = resolver.resolve(NetworkOperationProtocol.self)!
+            return PutUserInformationUseCase(networking: networkManager)
+        }
     }
 }
