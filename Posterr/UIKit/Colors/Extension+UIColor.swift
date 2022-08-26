@@ -13,15 +13,15 @@ extension UIColor {
         return UIColor(named: "primary")!
     }
     
+    public class var secondary: UIColor {
+        return UIColor(named: "secondary")!
+    }
+    
     public class var solitude: UIColor {
         return UIColor(named: "solitude")!
     }
     
     public class var lightGrey: UIColor {
         return UIColor(named: "lightGrey")!
-    }
-    
-    public class var prussianBlue: UIColor {
-        return UIColor(named: "prussianBlue")!
     }
 }

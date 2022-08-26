@@ -6,6 +6,28 @@
 //
 
 public struct GetFeedMessageUseCaseResponse: Decodable {
-    let statusCode: Int
+    let page: Int
+    let totalPages: Int
+    let totalResults: Int
+    let feeds: [GetFeedMessageResponse]
+}
+
+public struct GetFeedMessageResponse: Decodable {
+    let userID: Int
+    let userAvatar: String
     let message: String
+    let typeOfMessage: GetFeedMessageTypeResponse
+    let linkedMessage: GetFeedLinkedMessageResponse?
+}
+
+public struct GetFeedLinkedMessageResponse: Decodable {
+    let userID: Int
+    let userAvatar: String
+    let message: String
+}
+
+public enum GetFeedMessageTypeResponse: String, Decodable {
+    case normal = "NORMAL"
+    case reply = "REPLY"
+    case quote = "QUOTE"
 }

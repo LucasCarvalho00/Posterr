@@ -7,7 +7,7 @@
 
 import UIKit
 
-public struct SWMetrics {
+public struct PSMetrics {
     
     /// Margin with the size of 4.0
     static let tinyMargin: CGFloat = 4.0

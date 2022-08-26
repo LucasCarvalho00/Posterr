@@ -42,7 +42,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private func applyNavigationAppearances() {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .prussianBlue
+        appearance.backgroundColor = .primary
         appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
 
         let navBarAppearance = UINavigationBar.appearance()

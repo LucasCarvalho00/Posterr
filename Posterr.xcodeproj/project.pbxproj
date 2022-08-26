@@ -64,6 +64,8 @@
 		767455CB28B847CB00CC1F21 /* PutUserInformationUseCaseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767455CA28B847CB00CC1F21 /* PutUserInformationUseCaseEntity.swift */; };
 		767455CD28B847D200CC1F21 /* PutUserInformationUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767455CC28B847D200CC1F21 /* PutUserInformationUseCaseProtocol.swift */; };
 		767455CF28B847D900CC1F21 /* PutUserInformationUseCaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767455CE28B847D900CC1F21 /* PutUserInformationUseCaseResponse.swift */; };
+		767455D428B863E200CC1F21 /* PSCircularButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767455D328B863E200CC1F21 /* PSCircularButtonView.swift */; };
+		767455D628B863E900CC1F21 /* PSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767455D528B863E900CC1F21 /* PSTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +144,8 @@
 		767455CA28B847CB00CC1F21 /* PutUserInformationUseCaseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutUserInformationUseCaseEntity.swift; sourceTree = "<group>"; };
 		767455CC28B847D200CC1F21 /* PutUserInformationUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutUserInformationUseCaseProtocol.swift; sourceTree = "<group>"; };
 		767455CE28B847D900CC1F21 /* PutUserInformationUseCaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutUserInformationUseCaseResponse.swift; sourceTree = "<group>"; };
+		767455D328B863E200CC1F21 /* PSCircularButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSCircularButtonView.swift; sourceTree = "<group>"; };
+		767455D528B863E900CC1F21 /* PSTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSTextView.swift; sourceTree = "<group>"; };
 		7A5802BA81B8C861BDFF54F3 /* Pods-PosterrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PosterrUITests.debug.xcconfig"; path = "Target Support Files/Pods-PosterrUITests/Pods-PosterrUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		96E0DE7C3074C56407CD9D80 /* libPods-PosterrUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PosterrUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1DB91AA84ECAC0FC0D4A324 /* libPods-Posterr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Posterr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -286,11 +290,12 @@
 		7674554328B6FF3600CC1F21 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				767455A728B83B2400CC1F21 /* Fonts */,
-				767455A428B83AB300CC1F21 /* Metrics */,
-				7674558228B8071700CC1F21 /* Extensions */,
-				7674557B28B8047000CC1F21 /* Images */,
 				7674557A28B8046C00CC1F21 /* Colors */,
+				767455D028B8631900CC1F21 /* Components */,
+				7674558228B8071700CC1F21 /* Extensions */,
+				767455A728B83B2400CC1F21 /* Fonts */,
+				7674557B28B8047000CC1F21 /* Images */,
+				767455A428B83AB300CC1F21 /* Metrics */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -517,6 +522,31 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		767455D028B8631900CC1F21 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				767455D128B8632400CC1F21 /* PSCircularButtonView */,
+				767455D228B8632E00CC1F21 /* PSTextView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		767455D128B8632400CC1F21 /* PSCircularButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				767455D328B863E200CC1F21 /* PSCircularButtonView.swift */,
+			);
+			path = PSCircularButtonView;
+			sourceTree = "<group>";
+		};
+		767455D228B8632E00CC1F21 /* PSTextView */ = {
+			isa = PBXGroup;
+			children = (
+				767455D528B863E900CC1F21 /* PSTextView.swift */,
+			);
+			path = PSTextView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -688,12 +718,14 @@
 				767455BD28B8479000CC1F21 /* GetUserInformationUseCaseProtocol.swift in Sources */,
 				767455C328B847AB00CC1F21 /* PostFeedMessageUseCaseProtocol.swift in Sources */,
 				7674556428B7022800CC1F21 /* PSHomeViewController.swift in Sources */,
+				767455D628B863E900CC1F21 /* PSTextView.swift in Sources */,
 				7674559828B831B700CC1F21 /* FeedRequest.swift in Sources */,
 				7674558E28B82A9F00CC1F21 /* NetworkOperationProtocol.swift in Sources */,
 				7674557528B705F500CC1F21 /* ScenesFactory.swift in Sources */,
 				7674556028B7021D00CC1F21 /* PSUserProfileViewProtocol.swift in Sources */,
 				7674556828B7022E00CC1F21 /* PSHomeViewEntity.swift in Sources */,
 				767455C128B847A500CC1F21 /* PostFeedMessageUseCase.swift in Sources */,
+				767455D428B863E200CC1F21 /* PSCircularButtonView.swift in Sources */,
 				7674550F28B6FBEA00CC1F21 /* AppDelegate.swift in Sources */,
 				7674555928B7021200CC1F21 /* PSUserProfileViewModel.swift in Sources */,
 				767455CD28B847D200CC1F21 /* PutUserInformationUseCaseProtocol.swift in Sources */,
