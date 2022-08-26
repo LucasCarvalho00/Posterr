@@ -113,6 +113,8 @@ public final class PSHomeView: UIView {
         loadView.isHidden = true
         dataView.isHidden = false
         errorView.isHidden = true
+        
+        dataView.setupData(data: data)
     }
     
     private func setupError() {

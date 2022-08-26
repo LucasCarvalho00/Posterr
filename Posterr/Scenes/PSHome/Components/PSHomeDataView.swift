@@ -11,7 +11,9 @@ public final class PSHomeDataView: UIView {
     
     // MARK: - Public Attributes
     // MARK: - Private Properties
-
+    
+    var feedsItens: [PSHomeFeedMessageEntity] = []
+    
     // MARK: - Constants
     
     private struct Metrics {
@@ -64,6 +66,18 @@ public final class PSHomeDataView: UIView {
         return button
     }()
     
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.register(PSHomeTableViewCell.self, forCellReuseIdentifier: PSHomeTableViewCell.className)
+        tableView.showsHorizontalScrollIndicator = false
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.backgroundColor = .neutral30
+        return tableView
+    }()
+    
     // MARK: - Life Cyle
     
     override init(frame: CGRect) {
@@ -80,6 +94,7 @@ public final class PSHomeDataView: UIView {
     
     private func constraintUI() {
         addSubview(contentView)
+        contentView.addSubview(tableView)
         contentView.addSubview(spaceTextView)
         spaceTextView.addSubview(counterLabel)
         spaceTextView.addSubview(textView)
@@ -93,6 +108,11 @@ public final class PSHomeDataView: UIView {
             spaceTextView.bottomAnchor.constraint(equalTo: self.safeBottomAnchor),
             spaceTextView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             spaceTextView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            
+            tableView.topAnchor.constraint(equalTo: self.safeTopAnchor),
+            tableView.bottomAnchor.constraint(equalTo: spaceTextView.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             
             counterLabel.topAnchor.constraint(equalTo: spaceTextView.topAnchor, constant: PSMetrics.smallMargin),
             counterLabel.leadingAnchor.constraint(equalTo: spaceTextView.leadingAnchor, constant: PSMetrics.smallMargin),
@@ -113,6 +133,14 @@ public final class PSHomeDataView: UIView {
 
     // MARK: - Public Functions
 
+    public func setupData(data: PSHomeViewEntity) {
+        if let feeds = data.feeds {
+            feedsItens = feeds
+        }
+        
+        tableView.reloadData()
+    }
+    
     public func messageSentSuccessfully() {
         textView.text = ""
         counterLabel.text = Constants.counterText
@@ -136,4 +164,23 @@ extension PSHomeDataView: PSCircularButtonViewDelegate {
         
         delegate?.sendMessage(message: textView.text)
     }
+}
+
+extension PSHomeDataView: UITableViewDataSource {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PSHomeTableViewCell.className,
+                                                       for: indexPath) as? PSHomeTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.setupUI(data: feedsItens[indexPath.row])
+        return cell
+    }
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        feedsItens.count
+    }
+}
+
+extension PSHomeDataView: UITableViewDelegate {
+    
 }

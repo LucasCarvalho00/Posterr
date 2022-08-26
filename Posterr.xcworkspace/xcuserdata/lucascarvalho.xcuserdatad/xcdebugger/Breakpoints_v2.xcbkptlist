@@ -14,8 +14,8 @@
             filePath = "Posterr/Scenes/PSHome/Components/PSHomeDataView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
             landmarkName = "didTap(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -32,22 +32,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
             endingLineNumber = "85"
-            landmarkName = "parseObject(jsonData:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A5A04AC0-979F-482D-890E-B894A078A0B6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Posterr/Foundation/Networking/NetworkOperation.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
             landmarkName = "parseObject(jsonData:completion:)"
             landmarkType = "7">
          </BreakpointContent>

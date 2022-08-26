@@ -76,6 +76,8 @@
 		76A29D0A28B9575400B0AC61 /* PSHomeDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A29D0928B9575400B0AC61 /* PSHomeDataView.swift */; };
 		76A29D0C28B9575F00B0AC61 /* PSHomeErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A29D0B28B9575F00B0AC61 /* PSHomeErrorView.swift */; };
 		76A29D0E28B9579200B0AC61 /* PSHomeLoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A29D0D28B9579200B0AC61 /* PSHomeLoadView.swift */; };
+		76A29D1028B96F4900B0AC61 /* PSHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A29D0F28B96F4900B0AC61 /* PSHomeTableViewCell.swift */; };
+		76A29D1228B9731600B0AC61 /* Extension+NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A29D1128B9731600B0AC61 /* Extension+NSObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +165,8 @@
 		76A29D0928B9575400B0AC61 /* PSHomeDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSHomeDataView.swift; sourceTree = "<group>"; };
 		76A29D0B28B9575F00B0AC61 /* PSHomeErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSHomeErrorView.swift; sourceTree = "<group>"; };
 		76A29D0D28B9579200B0AC61 /* PSHomeLoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSHomeLoadView.swift; sourceTree = "<group>"; };
+		76A29D0F28B96F4900B0AC61 /* PSHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSHomeTableViewCell.swift; sourceTree = "<group>"; };
+		76A29D1128B9731600B0AC61 /* Extension+NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+NSObject.swift"; sourceTree = "<group>"; };
 		7A5802BA81B8C861BDFF54F3 /* Pods-PosterrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PosterrUITests.debug.xcconfig"; path = "Target Support Files/Pods-PosterrUITests/Pods-PosterrUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		96E0DE7C3074C56407CD9D80 /* libPods-PosterrUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PosterrUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1DB91AA84ECAC0FC0D4A324 /* libPods-Posterr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Posterr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -417,6 +421,7 @@
 			isa = PBXGroup;
 			children = (
 				7674558328B8072300CC1F21 /* Extension+UIView.swift */,
+				76A29D1128B9731600B0AC61 /* Extension+NSObject.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -591,6 +596,7 @@
 				76A29D0928B9575400B0AC61 /* PSHomeDataView.swift */,
 				76A29D0D28B9579200B0AC61 /* PSHomeLoadView.swift */,
 				76A29D0B28B9575F00B0AC61 /* PSHomeErrorView.swift */,
+				76A29D0F28B96F4900B0AC61 /* PSHomeTableViewCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -757,6 +763,7 @@
 				7674556F28B705BA00CC1F21 /* DependencyGraph.swift in Sources */,
 				76A29CFF28B9037500B0AC61 /* PSTextViewDelegate.swift in Sources */,
 				7674557F28B804BC00CC1F21 /* Extension+UIImage.swift in Sources */,
+				76A29D1028B96F4900B0AC61 /* PSHomeTableViewCell.swift in Sources */,
 				7674558428B8072300CC1F21 /* Extension+UIView.swift in Sources */,
 				7674558A28B82A4400CC1F21 /* RequestProtocol.swift in Sources */,
 				767455C928B847C500CC1F21 /* PutUserInformationUseCase.swift in Sources */,
@@ -803,6 +810,7 @@
 				7674557328B705DC00CC1F21 /* ScenesAssembly.swift in Sources */,
 				767455CF28B847D900CC1F21 /* PutUserInformationUseCaseResponse.swift in Sources */,
 				7674556B28B7023300CC1F21 /* PSHomeViewProtocol.swift in Sources */,
+				76A29D1228B9731600B0AC61 /* Extension+NSObject.swift in Sources */,
 				767455B928B8476F00CC1F21 /* GetFeedMessageUseCaseProtocol.swift in Sources */,
 				767455B328B8475800CC1F21 /* GetFeedMessageUseCase.swift in Sources */,
 				7674558C28B82A4E00CC1F21 /* NetworkingRequestMethod.swift in Sources */,
