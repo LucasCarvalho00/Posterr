@@ -41,24 +41,10 @@ public final class PSHomeTableViewCell: UITableViewCell {
         return contentView
     }()
     
-    private lazy var messageLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .black
-        label.textAlignment = .left
-        label.numberOfLines = 0
-        label.font = PSFontStyle.component
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private lazy var dateLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .neutral60
-        label.textAlignment = .left
-        label.numberOfLines = 1
-        label.font = PSFontStyle.component
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    private lazy var messageView: PSFeedMessageView = {
+        let view = PSFeedMessageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     private lazy var userImageView: UIImageView = {
@@ -87,8 +73,7 @@ public final class PSHomeTableViewCell: UITableViewCell {
 
     public override func prepareForReuse() {
         super.prepareForReuse()
-        messageLabel.text = ""
-        dateLabel.text = ""
+        messageView.setupMessage(message: "", date: "")
     }
     
     // MARK: - Setup
@@ -102,8 +87,7 @@ public final class PSHomeTableViewCell: UITableViewCell {
         contentView.addSubview(stackContentView)
         contentView.addSubview(userImageView)
         stackContentView.addArrangedSubview(customContentView)
-        customContentView.addSubview(messageLabel)
-        customContentView.addSubview(dateLabel)
+        customContentView.addSubview(messageView)
     }
 
     private func setupConstraints() {
@@ -118,28 +102,20 @@ public final class PSHomeTableViewCell: UITableViewCell {
             stackContentView.leadingAnchor.constraint(equalTo: userImageView.trailingAnchor, constant: PSMetrics.mediumMargin),
             stackContentView.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -PSMetrics.mediumMargin),
 
-            messageLabel.topAnchor.constraint(equalTo: customContentView.topAnchor, constant: PSMetrics.smallMargin),
-            messageLabel.leadingAnchor.constraint(greaterThanOrEqualTo: customContentView.leadingAnchor, constant: PSMetrics.smallMargin),
-            messageLabel.trailingAnchor.constraint(equalTo: customContentView.trailingAnchor, constant: -PSMetrics.smallMargin),
-            
-            
-            dateLabel.topAnchor.constraint(equalTo: messageLabel.bottomAnchor, constant: PSMetrics.smallMargin),
-            dateLabel.bottomAnchor.constraint(equalTo: customContentView.bottomAnchor, constant: -PSMetrics.smallMargin),
-            dateLabel.leadingAnchor.constraint(greaterThanOrEqualTo: customContentView.leadingAnchor, constant: PSMetrics.smallMargin),
-            dateLabel.trailingAnchor.constraint(equalTo: customContentView.trailingAnchor, constant: -PSMetrics.smallMargin),
+            messageView.topAnchor.constraint(equalTo: customContentView.topAnchor, constant: PSMetrics.smallMargin),
+            messageView.bottomAnchor.constraint(equalTo: customContentView.bottomAnchor, constant: -PSMetrics.smallMargin),
+            messageView.leadingAnchor.constraint(equalTo: customContentView.leadingAnchor, constant: PSMetrics.smallMargin),
+            messageView.trailingAnchor.constraint(equalTo: customContentView.trailingAnchor, constant: -PSMetrics.smallMargin),
         ])
     }
     
     // MARK: - Public Functions
 
     public func setupUI(data: PSHomeFeedMessageEntity) {
-        messageLabel.text = data.message
-        dateLabel.text = data.date
+        messageView.setupMessage(message: data.message, date: data.date)
         setupImage(photoURL: data.userAvatar)
     }
     
-    
-
     // MARK: - Private Functions
     
     private func setupImage(photoURL: String) {

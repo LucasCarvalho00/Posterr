@@ -78,6 +78,7 @@
 		76A29D0E28B9579200B0AC61 /* PSHomeLoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A29D0D28B9579200B0AC61 /* PSHomeLoadView.swift */; };
 		76A29D1028B96F4900B0AC61 /* PSHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A29D0F28B96F4900B0AC61 /* PSHomeTableViewCell.swift */; };
 		76A29D1228B9731600B0AC61 /* Extension+NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A29D1128B9731600B0AC61 /* Extension+NSObject.swift */; };
+		76A29D1528B97DA500B0AC61 /* PSFeedMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A29D1428B97DA500B0AC61 /* PSFeedMessageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +168,7 @@
 		76A29D0D28B9579200B0AC61 /* PSHomeLoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSHomeLoadView.swift; sourceTree = "<group>"; };
 		76A29D0F28B96F4900B0AC61 /* PSHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSHomeTableViewCell.swift; sourceTree = "<group>"; };
 		76A29D1128B9731600B0AC61 /* Extension+NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+NSObject.swift"; sourceTree = "<group>"; };
+		76A29D1428B97DA500B0AC61 /* PSFeedMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSFeedMessageView.swift; sourceTree = "<group>"; };
 		7A5802BA81B8C861BDFF54F3 /* Pods-PosterrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PosterrUITests.debug.xcconfig"; path = "Target Support Files/Pods-PosterrUITests/Pods-PosterrUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		96E0DE7C3074C56407CD9D80 /* libPods-PosterrUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PosterrUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1DB91AA84ECAC0FC0D4A324 /* libPods-Posterr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Posterr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -550,6 +552,7 @@
 		767455D028B8631900CC1F21 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				76A29D1328B97D9100B0AC61 /* PSFeedMessageView */,
 				767455D128B8632400CC1F21 /* PSCircularButtonView */,
 				767455D228B8632E00CC1F21 /* PSTextView */,
 			);
@@ -599,6 +602,14 @@
 				76A29D0F28B96F4900B0AC61 /* PSHomeTableViewCell.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		76A29D1328B97D9100B0AC61 /* PSFeedMessageView */ = {
+			isa = PBXGroup;
+			children = (
+				76A29D1428B97DA500B0AC61 /* PSFeedMessageView.swift */,
+			);
+			path = PSFeedMessageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -771,6 +782,7 @@
 				767455CB28B847CB00CC1F21 /* PutUserInformationUseCaseEntity.swift in Sources */,
 				7674557D28B8048C00CC1F21 /* Extension+UIColor.swift in Sources */,
 				767455C728B847B800CC1F21 /* PostFeedMessageUseCaseEntity.swift in Sources */,
+				76A29D1528B97DA500B0AC61 /* PSFeedMessageView.swift in Sources */,
 				7674556528B7022800CC1F21 /* PSHomeProtocol.swift in Sources */,
 				76A29D0A28B9575400B0AC61 /* PSHomeDataView.swift in Sources */,
 				7674559028B82AA900CC1F21 /* NetworkOperationError.swift in Sources */,

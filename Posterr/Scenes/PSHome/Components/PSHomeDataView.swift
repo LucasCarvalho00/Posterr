@@ -139,6 +139,11 @@ public final class PSHomeDataView: UIView {
         }
         
         tableView.reloadData()
+        
+        DispatchQueue.main.async {
+            let index = IndexPath(row: self.feedsItens.count-1, section: 0)
+            self.tableView.scrollToRow(at: index, at: .bottom, animated: false)
+        }
     }
     
     public func messageSentSuccessfully() {
