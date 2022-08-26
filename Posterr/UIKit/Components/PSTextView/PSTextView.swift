@@ -11,7 +11,9 @@ public class PSTextView: UIView {
     
     // MARK: - Constants
     
-    private struct Constants { }
+    private struct Constants {
+        static let borderWidth: CGFloat = 1
+    }
     
     // MARK: - Public Attributes
     
@@ -31,6 +33,10 @@ public class PSTextView: UIView {
         let textField = UITextView()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.delegate = self
+        textField.layer.borderWidth = Constants.borderWidth
+        textField.layer.borderColor = UIColor.neutral40.cgColor
+        textField.layer.masksToBounds = true
+        textField.layer.cornerRadius = PSMetrics.tinyMargin
         textField.isScrollEnabled = false
         textField.sizeToFit()
         textField.font = PSFontStyle.component
@@ -70,11 +76,31 @@ public class PSTextView: UIView {
     
     // MARK: - Private functions
     
+    private func setFocusState() {
+        textFieldView.layer.borderColor = UIColor.primary.cgColor
+    }
+    
+    private func setNormalState() {
+        textFieldView.layer.borderColor = UIColor.neutral40.cgColor
+    }
+    
+    private func setHasError(error: String) {
+        textFieldView.layer.borderColor = UIColor.secondary.cgColor
+    }
 }
 
 //MARK: - Extensions
 
 extension PSTextView: UITextViewDelegate {
+    public func textViewDidBeginEditing(_ textField: UITextView) {
+        setFocusState()
+    }
+    
+    public func textViewDidEndEditing(_ textField: UITextView) {
+        setNormalState()
+    }
+
+    
     public func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
 
         return true

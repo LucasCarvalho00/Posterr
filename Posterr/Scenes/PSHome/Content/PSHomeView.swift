@@ -13,7 +13,7 @@ final public class PSHomeView: UIView {
 
     private struct Metrics {
         static let minimumTextViewHeight: CGFloat = 24.0
-        static let buttonViewSize: CGSize = CGSize(width: 24, height: 24)
+        static let buttonViewSize: CGSize = CGSize(width: 30, height: 30)
     }
     
     private struct Constants {
@@ -28,14 +28,14 @@ final public class PSHomeView: UIView {
     private lazy var contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
+        view.backgroundColor = .neutral30
         return view
     }()
     
     private lazy var spaceTextView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .lightGrey
+        view.backgroundColor = .neutral30
         return view
     }()
     
@@ -48,7 +48,6 @@ final public class PSHomeView: UIView {
     private lazy var circularButton: PSCircularButtonView = {
         let button = PSCircularButtonView()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .blue
         return button
     }()
     
@@ -90,8 +89,8 @@ final public class PSHomeView: UIView {
             textView.bottomAnchor.constraint(equalTo: spaceTextView.bottomAnchor, constant: -PSMetrics.smallMargin),
             textView.leadingAnchor.constraint(equalTo: spaceTextView.leadingAnchor, constant: PSMetrics.smallMargin),
             
-            circularButton.leadingAnchor.constraint(equalTo: textView.trailingAnchor, constant: PSMetrics.smallMargin),
-            circularButton.trailingAnchor.constraint(equalTo: spaceTextView.trailingAnchor, constant: -PSMetrics.smallMargin),
+            circularButton.leadingAnchor.constraint(equalTo: textView.trailingAnchor, constant: PSMetrics.mediumMargin),
+            circularButton.trailingAnchor.constraint(equalTo: spaceTextView.trailingAnchor, constant: -PSMetrics.mediumMargin),
             circularButton.heightAnchor.constraint(equalToConstant: Metrics.buttonViewSize.height),
             circularButton.widthAnchor.constraint(equalToConstant: Metrics.buttonViewSize.width),
             circularButton.centerYAnchor.constraint(equalTo: textView.centerYAnchor)

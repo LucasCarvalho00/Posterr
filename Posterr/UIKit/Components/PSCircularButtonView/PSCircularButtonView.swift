@@ -9,24 +9,12 @@ import UIKit
 
 public class PSCircularButtonView: UIView {
     
-}
-
-//
-//  SWTextFieldView.swift
-//  Swile
-//
-// swiftlint:disable all
-//  Created byLucas Carvalho on 27/05/22.
-//  Copyright © 2022 Swile. All rights reserved.
-//
-
-import UIKit
-
-public class SWTextFieldView: UIView {
-    
     // MARK: - Constants
     
-    private struct Constants { }
+    private struct Constants {
+        static let customMargin: CGFloat = 6.0
+        static let animationTouch: CGFloat = 0.15
+    }
     
     // MARK: - Public Attributes
     
@@ -39,7 +27,21 @@ public class SWTextFieldView: UIView {
     private lazy var contentView: UIView = {
         let contentView = UIView()
         contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.clipsToBounds = true
+        contentView.layer.cornerRadius = PSMetrics.largeMargin
+        contentView.isUserInteractionEnabled = true
+        contentView.backgroundColor = .secondary
+        contentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTap)))
         return contentView
+    }()
+    
+    private lazy var iconView: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.image = .icSend
+        image.tintColor = .white
+        image.contentMode = .scaleAspectFit
+        return image
     }()
     
     // MARK: - Life Cyle
@@ -58,12 +60,42 @@ public class SWTextFieldView: UIView {
     
     private func constraintUI() {
         addSubview(contentView)
+        contentView.addSubview(iconView)
     }
     
     private func setupConstraints() {
         contentView.constraintToSuperview()
+        
+        NSLayoutConstraint.activate([
+            iconView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.customMargin),
+            iconView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constants.customMargin),
+            iconView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.customMargin),
+            iconView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.customMargin)
+        ])
     }
     
+    // MARK: - Actions
+    
+    @objc private func didTap() {
+
+    }
+    
+    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first, touch.view == contentView else {
+            return
+        }
+        contentView.backgroundColor = .neutral60
+    }
+    
+    public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first, touch.view == contentView else {
+            return
+        }
+        
+        UIView.animate(withDuration: Constants.animationTouch, animations: { () -> Void in
+            self.contentView.backgroundColor = .secondary
+        })
+    }
     
     // MARK: - Private functions
     

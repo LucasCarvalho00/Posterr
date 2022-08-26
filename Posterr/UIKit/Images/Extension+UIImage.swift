@@ -24,4 +24,8 @@ extension UIImage {
     public class var chevronRight: UIImage {
         return UIImage(named: "ic_chevron_right")!
     }
+    
+    public class var icSend: UIImage {
+        return UIImage(named: "ic_send")!
+    }
 }

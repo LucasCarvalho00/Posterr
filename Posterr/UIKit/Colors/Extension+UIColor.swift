@@ -24,4 +24,24 @@ extension UIColor {
     public class var lightGrey: UIColor {
         return UIColor(named: "lightGrey")!
     }
+    
+    public class var neutral30: UIColor {
+        return UIColor(named: "neutral30")!
+    }
+    
+    public class var neutral40: UIColor {
+        return UIColor(named: "neutral40")!
+    }
+    
+    public class var neutral60: UIColor {
+        return UIColor(named: "neutral60")!
+    }
+    
+    public class var neutral70: UIColor {
+        return UIColor(named: "neutral70")!
+    }
+    
+    public class var neutral80: UIColor {
+        return UIColor(named: "neutral80")!
+    }
 }
