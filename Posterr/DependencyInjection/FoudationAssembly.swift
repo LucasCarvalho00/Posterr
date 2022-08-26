@@ -25,8 +25,8 @@ final class FoudationAssembly: Assembly {
         
         // MARK: - NetworkOperation
         
-        container.register(NetworkOperationProtocol.self) { (_: Resolver, mockData: String?) in
-            return NetworkOperation(mockData: mockData)
+        container.register(NetworkOperationProtocol.self) { _ in
+            NetworkOperation(mockData: nil)
         }
     }
 }
