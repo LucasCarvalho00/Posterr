@@ -20,5 +20,83 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A08B8F3-6E0A-4894-95FD-E7DCC6DBE49E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Posterr/Scenes/PSHome/Components/PSHomeTableIsMeViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "linkedMessageView"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "9A08B8F3-6E0A-4894-95FD-E7DCC6DBE49E - 6aa8e88681f16922"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Posterr.PSHomeTableIsMeViewCell.linkedMessageView.getter : Posterr.PSFeedMessageView"
+                  moduleName = "Posterr"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascarvalho/Developer/Poster/Posterr/Scenes/PSHome/Components/PSHomeTableIsMeViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "9A08B8F3-6E0A-4894-95FD-E7DCC6DBE49E - c6ef0c8c5571eaa8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Posterr.PSHomeTableIsMeViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; Posterr.PSHomeTableIsMeViewCell"
+                  moduleName = "Posterr"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascarvalho/Developer/Poster/Posterr/Scenes/PSHome/Components/PSHomeTableIsMeViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "288">
+               </Location>
+               <Location
+                  uuid = "9A08B8F3-6E0A-4894-95FD-E7DCC6DBE49E - dc1acc89b6e72b49"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Posterr.PSHomeTableIsMeViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Posterr.PSHomeTableIsMeViewCell&gt;"
+                  moduleName = "Posterr"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascarvalho/Developer/Poster/Posterr/Scenes/PSHome/Components/PSHomeTableIsMeViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "260">
+               </Location>
+               <Location
+                  uuid = "9A08B8F3-6E0A-4894-95FD-E7DCC6DBE49E - 4bbb9623b4b17777"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; Posterr.PSFeedMessageView in Posterr.PSHomeTableIsMeViewCell.linkedMessageView.getter : Posterr.PSFeedMessageView"
+                  moduleName = "Posterr"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucascarvalho/Developer/Poster/Posterr/Scenes/PSHome/Components/PSHomeTableIsMeViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -33,6 +33,16 @@ public final class PSHomeTableIsMeViewCell: UITableViewCell {
         return stackView
     }()
     
+    private lazy var stackCustomContentView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.distribution = .fillProportionally
+        stackView.alignment = .leading
+        stackView.spacing = PSMetrics.smallMargin
+        return stackView
+    }()
+    
     private lazy var customContentView: UIView = {
         let contentView = UIView()
         contentView.translatesAutoresizingMaskIntoConstraints = false
@@ -44,6 +54,14 @@ public final class PSHomeTableIsMeViewCell: UITableViewCell {
     private lazy var messageView: PSFeedMessageView = {
         let view = PSFeedMessageView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var linkedMessageView: PSFeedMessageView = {
+        let view = PSFeedMessageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
+        view.isHidden = true
         return view
     }()
     
@@ -74,6 +92,7 @@ public final class PSHomeTableIsMeViewCell: UITableViewCell {
     public override func prepareForReuse() {
         super.prepareForReuse()
         messageView.setupMessage(message: "", date: "")
+        stackCustomContentView.removeArrangedSubview(linkedMessageView)
     }
     
     // MARK: - Setup
@@ -87,7 +106,8 @@ public final class PSHomeTableIsMeViewCell: UITableViewCell {
         contentView.addSubview(stackContentView)
         contentView.addSubview(userImageView)
         stackContentView.addArrangedSubview(customContentView)
-        customContentView.addSubview(messageView)
+        customContentView.addSubview(stackCustomContentView)
+        stackCustomContentView.addArrangedSubview(messageView)
     }
 
     private func setupConstraints() {
@@ -102,10 +122,10 @@ public final class PSHomeTableIsMeViewCell: UITableViewCell {
             stackContentView.leadingAnchor.constraint(greaterThanOrEqualTo: contentView.leadingAnchor, constant: PSMetrics.mediumMargin),
             stackContentView.trailingAnchor.constraint(equalTo: userImageView.leadingAnchor, constant: -PSMetrics.mediumMargin),
             
-            messageView.topAnchor.constraint(equalTo: customContentView.topAnchor, constant: PSMetrics.smallMargin),
-            messageView.bottomAnchor.constraint(equalTo: customContentView.bottomAnchor, constant: -PSMetrics.smallMargin),
-            messageView.leadingAnchor.constraint(equalTo: customContentView.leadingAnchor, constant: PSMetrics.smallMargin),
-            messageView.trailingAnchor.constraint(equalTo: customContentView.trailingAnchor, constant: -PSMetrics.smallMargin)
+            stackCustomContentView.topAnchor.constraint(equalTo: customContentView.topAnchor, constant: PSMetrics.smallMargin),
+            stackCustomContentView.bottomAnchor.constraint(equalTo: customContentView.bottomAnchor, constant: -PSMetrics.smallMargin),
+            stackCustomContentView.leadingAnchor.constraint(equalTo: customContentView.leadingAnchor, constant: PSMetrics.smallMargin),
+            stackCustomContentView.trailingAnchor.constraint(equalTo: customContentView.trailingAnchor, constant: -PSMetrics.smallMargin)
         ])
     }
     
@@ -116,9 +136,9 @@ public final class PSHomeTableIsMeViewCell: UITableViewCell {
         setupImage(photoURL: data.userAvatar)
         setupTypeCell(typeOfMessage: data.typeOfMessage)
         
-//        if let linkedEntity = data.linkedMessage {
-//            linkedMessageView.setupMessage(message: linkedEntity.message, date: linkedEntity.date)
-//        }
+        if let linkedEntity = data.linkedMessage {
+            linkedMessageView.setupMessage(message: linkedEntity.message, date: linkedEntity.date)
+        }
     }
     
     // MARK: - Private Functions
@@ -127,9 +147,14 @@ public final class PSHomeTableIsMeViewCell: UITableViewCell {
         switch typeOfMessage {
         case .normal:
             customContentView.backgroundColor = .white
+            linkedMessageView.isHidden = true
         case .reply:
+            stackCustomContentView.insertArrangedSubview(linkedMessageView, at: 0)
+            linkedMessageView.isHidden = false
             customContentView.backgroundColor = .reply
         case .quote:
+            stackCustomContentView.insertArrangedSubview(linkedMessageView, at: 1)
+            linkedMessageView.isHidden = false
             customContentView.backgroundColor = .quote
         }
     }
