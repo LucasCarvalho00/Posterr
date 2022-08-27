@@ -36,6 +36,7 @@ public final class PSUserProfileDataView: UIView {
         image.backgroundColor = .neutral40
         image.contentMode = .scaleAspectFit
         image.layer.cornerRadius = Metrics.imageSize.width / 2
+        image.clipsToBounds = true
         return image
     }()
     
@@ -134,11 +135,33 @@ public final class PSUserProfileDataView: UIView {
     // MARK: - Public Functions
 
     public func setupData(data: PSUserProfileViewEntity) {
+        setupImage(photoURL: data.userAvatar)
+        
         userNameLabel.text = data.userName
         userIDLabel.text = Constants.userID + String(data.userID)
         
         createdTextFieldView.setupText(title: Constants.registerText, text: data.createdDate)
         totalMessagesTextFieldView.setupText(title: Constants.totalText, text: String(data.totalMessages))
         todayMessagesTextFieldView.setupText(title: Constants.dailyText, text: String(data.totalTodayMessages))
+    }
+    
+    // MARK: - Private Functions
+
+    private func setupImage(photoURL: String) {
+        if let urlPhoto = URL(string: photoURL) {
+            let session = URLSession.shared
+            let task = session.dataTask(with: urlPhoto) { [weak userImageView] data, response, error in
+                guard let data = data else {
+                    return
+                }
+                
+                let image = UIImage(data: data)
+                DispatchQueue.main.async {
+                    userImageView?.image = image
+                }
+            }
+        
+            task.resume()
+        }
     }
 }
