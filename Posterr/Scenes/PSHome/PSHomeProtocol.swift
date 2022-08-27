@@ -26,4 +26,6 @@ public protocol PSHomeViewModelProtocol: AnyObject {
 
 // MARK: - FlowController
 
-public protocol PSHomeViewFlowProtocol: AnyObject { }
+public protocol PSHomeViewFlowProtocol: AnyObject {
+    func presentPSUserProfile()
+}

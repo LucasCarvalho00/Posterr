@@ -54,7 +54,8 @@ public final class PSHomeViewController: UIViewController {
     // MARK: - Private Functions
 
     private func setup() {
-        
+        let rightBarButtonItem = UIBarButtonItem.init(image: .icAccount.withTintColor(.white), style: .done, target: self, action: #selector(didTapOpenUserSettings))
+        self.navigationItem.rightBarButtonItem = rightBarButtonItem
     }
 
     private func contentSetup() {
@@ -62,6 +63,12 @@ public final class PSHomeViewController: UIViewController {
             self.view = contentView.content
         }
         viewProtocol?.delegate = self
+    }
+    
+    // MARK: - Actions
+    
+    @objc private func didTapOpenUserSettings() {
+        flowProtocol?.presentPSUserProfile()
     }
 }
 

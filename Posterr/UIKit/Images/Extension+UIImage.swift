@@ -32,4 +32,8 @@ extension UIImage {
     public class var icClose: UIImage {
         return UIImage(named: "ic_close")!
     }
+    
+    public class var icAccount: UIImage {
+        return UIImage(named: "ic_account")!
+    }
 }

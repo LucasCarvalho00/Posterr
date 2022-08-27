@@ -36,6 +36,12 @@ final class FlowController {
 
 // MARK: - Extension
 
-extension FlowController: PSHomeViewFlowProtocol { }
+extension FlowController: PSHomeViewFlowProtocol {
+    func presentPSUserProfile() {
+        let viewController = factory.makePSUserProfileViewController()
+        viewController.flowProtocol = self
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+}
 
 extension FlowController: PSUserProfileViewFlowProtocol { }
