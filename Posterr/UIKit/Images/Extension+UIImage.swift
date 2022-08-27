@@ -28,4 +28,8 @@ extension UIImage {
     public class var icSend: UIImage {
         return UIImage(named: "ic_send")!
     }
+    
+    public class var icClose: UIImage {
+        return UIImage(named: "ic_close")!
+    }
 }

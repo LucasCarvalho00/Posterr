@@ -21,7 +21,7 @@ public protocol PSHomeViewControllerProtocol: AnyObject {
 public protocol PSHomeViewModelProtocol: AnyObject {
     var viewController: PSHomeViewControllerProtocol? { get set }
     func initState()
-    func sendMessage(message: String)
+    func sendMessage(entity: PSHomeViewNewMessageEntity)
 }
 
 // MARK: - FlowController

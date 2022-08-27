@@ -80,6 +80,9 @@
 		76A29D1228B9731600B0AC61 /* Extension+NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A29D1128B9731600B0AC61 /* Extension+NSObject.swift */; };
 		76A29D1528B97DA500B0AC61 /* PSFeedMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A29D1428B97DA500B0AC61 /* PSFeedMessageView.swift */; };
 		76A29D1728B9973900B0AC61 /* PSHomeTableIsMeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A29D1628B9973900B0AC61 /* PSHomeTableIsMeViewCell.swift */; };
+		76A29D1A28B9A58D00B0AC61 /* PSLinkedMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A29D1928B9A58D00B0AC61 /* PSLinkedMessageView.swift */; };
+		76A29D1C28B9ABE700B0AC61 /* PSLinkedMessageViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A29D1B28B9ABE700B0AC61 /* PSLinkedMessageViewDelegate.swift */; };
+		76A29D1E28B9ADFC00B0AC61 /* PSHomeViewNewMessageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A29D1D28B9ADFC00B0AC61 /* PSHomeViewNewMessageEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +174,9 @@
 		76A29D1128B9731600B0AC61 /* Extension+NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+NSObject.swift"; sourceTree = "<group>"; };
 		76A29D1428B97DA500B0AC61 /* PSFeedMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSFeedMessageView.swift; sourceTree = "<group>"; };
 		76A29D1628B9973900B0AC61 /* PSHomeTableIsMeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSHomeTableIsMeViewCell.swift; sourceTree = "<group>"; };
+		76A29D1928B9A58D00B0AC61 /* PSLinkedMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSLinkedMessageView.swift; sourceTree = "<group>"; };
+		76A29D1B28B9ABE700B0AC61 /* PSLinkedMessageViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSLinkedMessageViewDelegate.swift; sourceTree = "<group>"; };
+		76A29D1D28B9ADFC00B0AC61 /* PSHomeViewNewMessageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSHomeViewNewMessageEntity.swift; sourceTree = "<group>"; };
 		7A5802BA81B8C861BDFF54F3 /* Pods-PosterrUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PosterrUITests.debug.xcconfig"; path = "Target Support Files/Pods-PosterrUITests/Pods-PosterrUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		96E0DE7C3074C56407CD9D80 /* libPods-PosterrUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PosterrUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1DB91AA84ECAC0FC0D4A324 /* libPods-Posterr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Posterr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -361,6 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				7674556728B7022E00CC1F21 /* PSHomeViewEntity.swift */,
+				76A29D1D28B9ADFC00B0AC61 /* PSHomeViewNewMessageEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -554,6 +561,7 @@
 		767455D028B8631900CC1F21 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				76A29D1828B9A57100B0AC61 /* PSLinkedMessageView */,
 				76A29D1328B97D9100B0AC61 /* PSFeedMessageView */,
 				767455D128B8632400CC1F21 /* PSCircularButtonView */,
 				767455D228B8632E00CC1F21 /* PSTextView */,
@@ -613,6 +621,15 @@
 				76A29D1428B97DA500B0AC61 /* PSFeedMessageView.swift */,
 			);
 			path = PSFeedMessageView;
+			sourceTree = "<group>";
+		};
+		76A29D1828B9A57100B0AC61 /* PSLinkedMessageView */ = {
+			isa = PBXGroup;
+			children = (
+				76A29D1928B9A58D00B0AC61 /* PSLinkedMessageView.swift */,
+				76A29D1B28B9ABE700B0AC61 /* PSLinkedMessageViewDelegate.swift */,
+			);
+			path = PSLinkedMessageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -778,6 +795,7 @@
 				76A29CFF28B9037500B0AC61 /* PSTextViewDelegate.swift in Sources */,
 				7674557F28B804BC00CC1F21 /* Extension+UIImage.swift in Sources */,
 				76A29D1028B96F4900B0AC61 /* PSHomeTableViewCell.swift in Sources */,
+				76A29D1C28B9ABE700B0AC61 /* PSLinkedMessageViewDelegate.swift in Sources */,
 				7674558428B8072300CC1F21 /* Extension+UIView.swift in Sources */,
 				7674558A28B82A4400CC1F21 /* RequestProtocol.swift in Sources */,
 				767455C928B847C500CC1F21 /* PutUserInformationUseCase.swift in Sources */,
@@ -788,6 +806,7 @@
 				76A29D1528B97DA500B0AC61 /* PSFeedMessageView.swift in Sources */,
 				7674556528B7022800CC1F21 /* PSHomeProtocol.swift in Sources */,
 				76A29D0A28B9575400B0AC61 /* PSHomeDataView.swift in Sources */,
+				76A29D1A28B9A58D00B0AC61 /* PSLinkedMessageView.swift in Sources */,
 				7674559028B82AA900CC1F21 /* NetworkOperationError.swift in Sources */,
 				76A29D0C28B9575F00B0AC61 /* PSHomeErrorView.swift in Sources */,
 				7674557928B70C3800CC1F21 /* FlowController.swift in Sources */,
@@ -828,6 +847,7 @@
 				7674556B28B7023300CC1F21 /* PSHomeViewProtocol.swift in Sources */,
 				76A29D1228B9731600B0AC61 /* Extension+NSObject.swift in Sources */,
 				767455B928B8476F00CC1F21 /* GetFeedMessageUseCaseProtocol.swift in Sources */,
+				76A29D1E28B9ADFC00B0AC61 /* PSHomeViewNewMessageEntity.swift in Sources */,
 				767455B328B8475800CC1F21 /* GetFeedMessageUseCase.swift in Sources */,
 				7674558C28B82A4E00CC1F21 /* NetworkingRequestMethod.swift in Sources */,
 				767455AF28B83BEA00CC1F21 /* Extension+UIFont.swift in Sources */,

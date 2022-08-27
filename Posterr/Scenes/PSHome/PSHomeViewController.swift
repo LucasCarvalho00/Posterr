@@ -78,7 +78,7 @@ extension PSHomeViewController: PSHomeViewViewControllerProtocol {
         viewModelProtocol?.initState()
     }
     
-    public func sendMessage(message: String) {
-        viewModelProtocol?.sendMessage(message: message)
+    public func sendMessage(entity: PSHomeViewNewMessageEntity) {
+        viewModelProtocol?.sendMessage(entity: entity)
     }
 }

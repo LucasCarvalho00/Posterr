@@ -18,9 +18,7 @@ public final class PSHomeTableViewCell: UITableViewCell {
     private struct Metrics {
         static let userImageSize: CGSize = CGSize(width: 48, height: 48)
     }
-    
-    private struct Constants { }
-    
+        
     // MARK: - UI
     
     private lazy var stackContentView: UIStackView = {
@@ -38,7 +36,7 @@ public final class PSHomeTableViewCell: UITableViewCell {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.distribution = .fillProportionally
-        stackView.alignment = .leading
+        stackView.alignment = .trailing
         stackView.spacing = PSMetrics.smallMargin
         return stackView
     }()
@@ -151,11 +149,11 @@ public final class PSHomeTableViewCell: UITableViewCell {
         case .reply:
             stackCustomContentView.insertArrangedSubview(linkedMessageView, at: 0)
             linkedMessageView.isHidden = false
-            customContentView.backgroundColor = .reply
+            customContentView.backgroundColor = .reply50
         case .quote:
             stackCustomContentView.insertArrangedSubview(linkedMessageView, at: 1)
             linkedMessageView.isHidden = false
-            customContentView.backgroundColor = .quote
+            customContentView.backgroundColor = .quote50
         }
     }
     

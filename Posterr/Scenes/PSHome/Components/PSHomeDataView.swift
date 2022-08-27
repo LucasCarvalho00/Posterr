@@ -9,20 +9,24 @@ import UIKit
 
 public final class PSHomeDataView: UIView {
     
-    // MARK: - Public Attributes
     // MARK: - Private Properties
     
-    var feedsItens: [PSHomeFeedMessageEntity] = []
+    private var feedsItens: [PSHomeFeedMessageEntity] = []
+    private var linkedMessage: PSHomeFeedNewLinkedMessageEntity?
+    private var typeMessage: PSHomeViewNewMessageTypeEntity = .normal
     
     // MARK: - Constants
     
     private struct Metrics {
+        static let heightReplyStackView: CGFloat = 40.0
         static let buttonViewSize: CGSize = CGSize(width: 30, height: 30)
         static let maxStringMessage: Int = 777
     }
     
     private struct Constants {
         static let counterText = "0/" + String(Metrics.maxStringMessage)
+        static let reply = NSLocalizedString("Reply", comment: "")
+        static let quote = NSLocalizedString("Quote", comment: "")
     }
     
     // MARK: - Delegate
@@ -42,6 +46,16 @@ public final class PSHomeDataView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .neutral30
         return view
+    }()
+    
+    private lazy var stackLinkedMessageView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.alignment = .fill
+        stackView.spacing = PSMetrics.smallMargin
+        return stackView
     }()
     
     private lazy var counterLabel: UILabel = {
@@ -65,6 +79,15 @@ public final class PSHomeDataView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.delegate = self
         return button
+    }()
+    
+    private lazy var linkedMessageView: PSLinkedMessageView = {
+        let view = PSLinkedMessageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .neutral30
+        view.isHidden = true
+        view.delegate = self
+        return view
     }()
     
     private lazy var tableView: UITableView = {
@@ -97,7 +120,9 @@ public final class PSHomeDataView: UIView {
     private func constraintUI() {
         addSubview(contentView)
         contentView.addSubview(tableView)
-        contentView.addSubview(spaceTextView)
+        contentView.addSubview(stackLinkedMessageView)
+        stackLinkedMessageView.addArrangedSubview(linkedMessageView)
+        stackLinkedMessageView.addArrangedSubview(spaceTextView)
         spaceTextView.addSubview(counterLabel)
         spaceTextView.addSubview(textView)
         spaceTextView.addSubview(circularButton)
@@ -107,12 +132,12 @@ public final class PSHomeDataView: UIView {
         contentView.constraintToSuperview()
         
         NSLayoutConstraint.activate([
-            spaceTextView.bottomAnchor.constraint(equalTo: self.safeBottomAnchor),
-            spaceTextView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            spaceTextView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            stackLinkedMessageView.bottomAnchor.constraint(equalTo: self.safeBottomAnchor),
+            stackLinkedMessageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            stackLinkedMessageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             
             tableView.topAnchor.constraint(equalTo: self.safeTopAnchor),
-            tableView.bottomAnchor.constraint(equalTo: spaceTextView.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: stackLinkedMessageView.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             
@@ -133,6 +158,53 @@ public final class PSHomeDataView: UIView {
     
     // MARK: - Private Functions
 
+    private func setupReply(entity: PSHomeFeedMessageEntity) {
+        linkedMessageView.isHidden = false
+        linkedMessageView.setupMessage(message: entity.message, date: entity.date)
+        textView.customBackground = .reply50
+        linkedMessage = makePSHomeFeedNewLinkedMessageEntity(entity: entity)
+        typeMessage = .reply
+
+        DispatchQueue.main.async {
+            let index = IndexPath(row: self.feedsItens.count - 1, section: 0)
+            self.tableView.scrollToRow(at: index, at: .bottom, animated: false)
+        }
+    }
+    
+    private func setupQuote(entity: PSHomeFeedMessageEntity) {
+        linkedMessageView.isHidden = false
+        linkedMessageView.setupMessage(message: entity.message, date: entity.date)
+        textView.customBackground = .quote50
+        linkedMessage = makePSHomeFeedNewLinkedMessageEntity(entity: entity)
+        typeMessage = .quote
+        
+        DispatchQueue.main.async {
+            let index = IndexPath(row: self.feedsItens.count - 1, section: 0)
+            self.tableView.scrollToRow(at: index, at: .bottom, animated: false)
+        }
+    }
+    
+    private func setupCloseLinkedMessage() {
+        linkedMessageView.isHidden = true
+        linkedMessageView.setupMessage(message: "", date: "")
+        textView.customBackground = .white
+        linkedMessage = nil
+        typeMessage = .normal
+
+        DispatchQueue.main.async {
+            let index = IndexPath(row: self.feedsItens.count - 1, section: 0)
+            self.tableView.scrollToRow(at: index, at: .bottom, animated: false)
+        }
+    }
+    
+    private func makePSHomeFeedNewLinkedMessageEntity(entity: PSHomeFeedMessageEntity) -> PSHomeFeedNewLinkedMessageEntity {
+        PSHomeFeedNewLinkedMessageEntity(
+            userID: entity.userID,
+            userAvatar: entity.userAvatar,
+            message: entity.message,
+            date: entity.date)
+    }
+    
     // MARK: - Public Functions
 
     public func setupData(data: PSHomeViewEntity) {
@@ -153,9 +225,10 @@ public final class PSHomeDataView: UIView {
         tableView.beginUpdates()
         tableView.insertRows(at: [IndexPath.init(row: feedsItens.count - 1, section: 0)], with: .automatic)
         tableView.endUpdates()
-        
+        setupCloseLinkedMessage()
+
         DispatchQueue.main.async {
-            let index = IndexPath(row: self.feedsItens.count-1, section: 0)
+            let index = IndexPath(row: self.feedsItens.count - 1, section: 0)
             self.tableView.scrollToRow(at: index, at: .bottom, animated: true)
         }
     }
@@ -181,7 +254,18 @@ extension PSHomeDataView: PSCircularButtonViewDelegate {
             return
         }
         
-        delegate?.sendMessage(message: textView.text)
+        let entity = PSHomeViewNewMessageEntity(
+            message: textView.text,
+            typeMessage: typeMessage,
+            linkedMessage: linkedMessage)
+        
+        delegate?.sendMessage(entity: entity)
+    }
+}
+
+extension PSHomeDataView: PSLinkedMessageViewDelegate {
+    public func didTapClose() {
+        setupCloseLinkedMessage()
     }
 }
 
@@ -195,7 +279,7 @@ extension PSHomeDataView: UITableViewDataSource {
                 return UITableViewCell()
             }
             
-            cell.setupUI(data: feedsItens[indexPath.row])
+            cell.setupUI(data: currentEntity)
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: PSHomeTableViewCell.className,
@@ -203,7 +287,7 @@ extension PSHomeDataView: UITableViewDataSource {
                 return UITableViewCell()
             }
             
-            cell.setupUI(data: feedsItens[indexPath.row])
+            cell.setupUI(data: currentEntity)
             return cell
         }
     }
@@ -211,8 +295,25 @@ extension PSHomeDataView: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         feedsItens.count
     }
+    
+    public func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let currentEntity = feedsItens[indexPath.row]
+
+        let reply = UIContextualAction(style: .normal, title: Constants.reply, handler: { [weak self] (ac: UIContextualAction, view: UIView, success: (Bool) -> Void) in
+            self?.setupReply(entity: currentEntity)
+            success(true)
+        })
+        reply.backgroundColor = .reply
+        
+        let quote = UIContextualAction(style: .normal, title: Constants.quote, handler: { [weak self] (ac: UIContextualAction, view: UIView, success: (Bool) -> Void) in
+            self?.setupQuote(entity: currentEntity)
+            success(true)
+            
+        })
+        quote.backgroundColor = .quote
+        
+        return UISwipeActionsConfiguration(actions: [reply, quote])
+    }
 }
 
-extension PSHomeDataView: UITableViewDelegate {
-    
-}
+extension PSHomeDataView: UITableViewDelegate { }

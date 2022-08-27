@@ -8,13 +8,7 @@
 import UIKit
 
 public final class PSHomeView: UIView {
-    
-    // MARK: - Constants
-
-    private struct Metrics { }
-    
-    private struct Constants { }
-        
+            
     // MARK: - Delegates
     
     public weak var delegate: PSHomeViewViewControllerProtocol?
@@ -158,7 +152,7 @@ extension PSHomeView: PSHomeErrorViewDelegate {
 }
 
 extension PSHomeView: PSHomeDataViewProtocol {
-    public func sendMessage(message: String) {
-        delegate?.sendMessage(message: message)
+    public func sendMessage(entity: PSHomeViewNewMessageEntity) {
+        delegate?.sendMessage(entity: entity)
     }
 }

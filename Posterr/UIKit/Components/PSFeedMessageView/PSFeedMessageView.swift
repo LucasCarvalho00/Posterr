@@ -9,6 +9,13 @@ import UIKit
 
 public final class PSFeedMessageView: UIView {
     
+    // MARK: - Public Properties
+
+    public var numberOfLines: Int {
+        get { messageLabel.numberOfLines }
+        set { messageLabel.numberOfLines = newValue }
+    }
+    
     // MARK: - Life Cyle
     
     override init(frame: CGRect) {
@@ -32,7 +39,7 @@ public final class PSFeedMessageView: UIView {
     private lazy var messageLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.textAlignment = .left
+        label.textAlignment = .right
         label.numberOfLines = 0
         label.font = PSFontStyle.component
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -42,7 +49,7 @@ public final class PSFeedMessageView: UIView {
     private lazy var dateLabel: UILabel = {
         let label = UILabel()
         label.textColor = .neutral60
-        label.textAlignment = .left
+        label.textAlignment = .right
         label.numberOfLines = 1
         label.font = PSFontStyle.component
         label.translatesAutoresizingMaskIntoConstraints = false

@@ -2,6 +2,11 @@
 
 "Home screen" = "Tela inicial";
 
+// MARK: - PSHomeDataView
+
+"Reply" = "Responder";
+"Quote" = "Citar";
+
 // MARK: - PSHomeErrorView
 
 "Reload information" = "Recarregar informações";

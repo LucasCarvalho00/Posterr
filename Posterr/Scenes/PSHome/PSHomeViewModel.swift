@@ -106,8 +106,21 @@ public final class PSHomeViewModel {
             feeds: feeds)
     }
     
-    private func makeEntityPostFeedMessage(message: String) {
-        let entity = PostFeedMessageUseCaseEntity(message: message)
+    private func makeEntityPostFeedMessage(entity: PSHomeViewNewMessageEntity) {
+        var linkedMessage: PostLinkedFeedUseCaseEntity?
+        
+        if let linkedMessageEntity = entity.linkedMessage {
+            linkedMessage = PostLinkedFeedUseCaseEntity(
+                userID: linkedMessageEntity.userID,
+                userAvatar: linkedMessageEntity.userAvatar,
+                message: linkedMessageEntity.message,
+                date: linkedMessageEntity.date)
+        }
+        
+        let entity = PostFeedMessageUseCaseEntity(
+            message: entity.message,
+            type: PostLinkedFeedUseCaseTypeEntity(rawValue: entity.typeMessage.rawValue) ?? .normal,
+            linkedMessage: linkedMessage)
         callPostFeedMessageUseCaseProtocol(entity: entity)
     }
     
@@ -128,14 +141,24 @@ public final class PSHomeViewModel {
     }
     
     private func insertNewMessage(responseEntity: PostFeedMessageUseCaseEntity) {
+        var linkedMessage: PSHomeFeedLinkedMessageEntity?
+        
+        if let linkedMessageEntity = responseEntity.linkedMessage {
+            linkedMessage = PSHomeFeedLinkedMessageEntity(
+                userID: linkedMessageEntity.userID,
+                userAvatar: linkedMessageEntity.userAvatar,
+                message: linkedMessageEntity.message,
+                date: linkedMessageEntity.date)
+        }
+        
         let newMessageEntity = PSHomeFeedMessageEntity(
             userID: Metrics.mockCurrentUserID,
             userAvatar: Constants.mockUserAvatar,
             message: responseEntity.message,
             date: convertStringToFormatedDate(dateString: Date().description),
             isMe: true,
-            typeOfMessage: .normal,
-            linkedMessage: nil)
+            typeOfMessage: PSHomeFeedMessageTypeEntity(rawValue: responseEntity.type.rawValue) ?? .normal,
+            linkedMessage: linkedMessage)
         
         viewController?.setupUI(with: .insertNewMessage(newMessageEntity))
     }
@@ -163,7 +186,7 @@ extension PSHomeViewModel: PSHomeViewModelProtocol {
         initScreen()
     }
     
-    public func sendMessage(message: String) {
-        makeEntityPostFeedMessage(message: message)
+    public func sendMessage(entity: PSHomeViewNewMessageEntity) {
+        makeEntityPostFeedMessage(entity: entity)
     }
 }

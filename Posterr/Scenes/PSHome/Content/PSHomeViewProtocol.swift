@@ -20,7 +20,7 @@ public enum PSHomeViewState: Equatable {
 
 public protocol PSHomeViewViewControllerProtocol: AnyObject {
     func didTapReload()
-    func sendMessage(message: String)
+    func sendMessage(entity: PSHomeViewNewMessageEntity)
 }
 
 // MARK: - View
@@ -40,7 +40,7 @@ extension PSHomeViewProtocol where Self: UIView {
 // MARK: - PSHomeDataView
 
 public protocol PSHomeDataViewProtocol: AnyObject {
-    func sendMessage(message: String)
+    func sendMessage(entity: PSHomeViewNewMessageEntity)
 }
 
 // MARK: - PSHomeErrorView

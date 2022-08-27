@@ -19,8 +19,14 @@ public class PSTextView: UIView {
         
     public var delegate: PSTextViewDelegate?
     
-    // MARK: - Delegate
+    // MARK: - Public Properties
 
+    public var customBackground: UIColor = .secondary {
+        willSet(newColor) {
+            textFieldView.layer.backgroundColor = newColor.cgColor
+        }
+    }
+    
     public var text: String {
         get { textFieldView.text }
         set { textFieldView.text = newValue }

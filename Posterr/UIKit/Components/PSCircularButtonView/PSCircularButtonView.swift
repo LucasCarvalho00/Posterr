@@ -18,7 +18,20 @@ public class PSCircularButtonView: UIView {
         
     // MARK: - Delegate
 
-    public var delegate: PSCircularButtonViewDelegate?
+    public weak var delegate: PSCircularButtonViewDelegate?
+    
+    // MARK: - Public Properties
+
+    public var customBackground: UIColor = .secondary {
+        willSet(newColor) {
+            contentView.backgroundColor = newColor
+        }
+    }
+    
+    public var customImage: UIImage? {
+        get { iconView.image }
+        set { iconView.image = newValue }
+    }
     
     // MARK: - UI
     
@@ -84,7 +97,7 @@ public class PSCircularButtonView: UIView {
     
     public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         UIView.animate(withDuration: Constants.animationTouch, animations: { [weak self] () -> Void in
-            self?.contentView.backgroundColor = .secondary
+            self?.contentView.backgroundColor = self?.customBackground
         })
     }
 }
