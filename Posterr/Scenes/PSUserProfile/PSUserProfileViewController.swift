@@ -10,6 +10,12 @@ import UIKit
 
 public final class PSUserProfileViewController: UIViewController {
 
+    // MARK: - Constants
+
+    private struct Constants {
+        static let title: String = NSLocalizedString("User Information", comment: "")
+    }
+    
     // MARK: - Public Attributes
 
     public let viewProtocol: PSUserProfileViewProtocol?
@@ -42,6 +48,7 @@ public final class PSUserProfileViewController: UIViewController {
         super.viewDidLoad()
         setup()
         viewModelProtocol?.initState()
+        self.title = Constants.title
     }
 
     // MARK: - Private Functions
@@ -66,4 +73,8 @@ extension PSUserProfileViewController: PSUserProfileViewControllerProtocol {
     }
 }
 
-extension PSUserProfileViewController: PSUserProfileViewViewControllerProtocol { }
+extension PSUserProfileViewController: PSUserProfileViewViewControllerProtocol {
+    public func didTapReload() {
+        viewModelProtocol?.initState()
+    }
+}

@@ -44,7 +44,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = .primary
         appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
-
+        
         let navBarAppearance = UINavigationBar.appearance()
         navBarAppearance.standardAppearance = appearance
         navBarAppearance.scrollEdgeAppearance = navBarAppearance.standardAppearance

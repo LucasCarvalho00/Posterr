@@ -12,3 +12,14 @@
 "Reload information" = "Recarregar informações";
 "It was not possible to display the information at this time. How about trying again?" = "No momento não foi possível mostrar as informações. Que tal tentar novamente?";
 "RELOAD" = "RECARREGAR";
+
+// MARK: - PSUserProfileView
+
+"User Information" = "Informações do usuário";
+
+// MARK: - PSUserProfileDataView
+
+"User ID: " = "ID do usúario: ";
+"Registration Date" = "Data de registro";
+"Total messages" = "Total de mensagens";
+"Daily total" = "Total diario";

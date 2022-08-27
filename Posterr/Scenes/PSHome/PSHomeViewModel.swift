@@ -23,7 +23,6 @@ public final class PSHomeViewModel {
         static let dateYearMask = "yyyy"
         static let mockUserAvatar = "https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png"
     }
-
     
     // MARK: - Public Attributes
 

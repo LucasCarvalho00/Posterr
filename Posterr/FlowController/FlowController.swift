@@ -28,7 +28,9 @@ final class FlowController {
     // MARK: - Public Functions
 
     public func start() {
-        let viewController = factory.makePSHomeViewController()
+//        let viewController = factory.makePSHomeViewController()
+        let viewController = factory.makePSUserProfileViewController()
+
         viewController.flowProtocol = self
         navigationController?.setViewControllers([viewController], animated: true)
     }

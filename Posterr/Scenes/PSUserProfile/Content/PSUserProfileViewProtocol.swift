@@ -16,7 +16,9 @@ public enum PSUserProfileViewState: Equatable {
 }
 // MARK: - ViewController
 
-public protocol PSUserProfileViewViewControllerProtocol: AnyObject { }
+public protocol PSUserProfileViewViewControllerProtocol: AnyObject {
+    func didTapReload()
+}
 
 // MARK: - View
 
@@ -30,4 +32,10 @@ public protocol PSUserProfileViewProtocol: AnyObject {
 
 extension PSUserProfileViewProtocol where Self: UIView {
     public var content: UIView { return self }
+}
+
+// MARK: - PSUserProfileErrorView
+
+public protocol PSUserProfileErrorViewDelegate: AnyObject {
+    func didTapReload()
 }
