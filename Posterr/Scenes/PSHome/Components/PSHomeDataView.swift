@@ -71,6 +71,7 @@ public final class PSHomeDataView: UIView {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(PSHomeTableViewCell.self, forCellReuseIdentifier: PSHomeTableViewCell.className)
+        tableView.register(PSHomeTableIsMeViewCell.self, forCellReuseIdentifier: PSHomeTableIsMeViewCell.className)
         tableView.showsHorizontalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.dataSource = self
@@ -147,6 +148,18 @@ public final class PSHomeDataView: UIView {
         }
     }
     
+    public func insertNewMessage(entity: PSHomeFeedMessageEntity) {
+        feedsItens.append(entity)
+        tableView.beginUpdates()
+        tableView.insertRows(at: [IndexPath.init(row: feedsItens.count - 1, section: 0)], with: .automatic)
+        tableView.endUpdates()
+        
+        DispatchQueue.main.async {
+            let index = IndexPath(row: self.feedsItens.count-1, section: 0)
+            self.tableView.scrollToRow(at: index, at: .bottom, animated: true)
+        }
+    }
+    
     public func messageSentSuccessfully() {
         textView.text = ""
         counterLabel.text = Constants.counterText
@@ -174,12 +187,25 @@ extension PSHomeDataView: PSCircularButtonViewDelegate {
 
 extension PSHomeDataView: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: PSHomeTableViewCell.className,
-                                                       for: indexPath) as? PSHomeTableViewCell else {
-            return UITableViewCell()
+        let currentEntity = feedsItens[indexPath.row]
+        
+        if currentEntity.isMe {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: PSHomeTableIsMeViewCell.className,
+                                                           for: indexPath) as? PSHomeTableIsMeViewCell else {
+                return UITableViewCell()
+            }
+            
+            cell.setupUI(data: feedsItens[indexPath.row])
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: PSHomeTableViewCell.className,
+                                                           for: indexPath) as? PSHomeTableViewCell else {
+                return UITableViewCell()
+            }
+            
+            cell.setupUI(data: feedsItens[indexPath.row])
+            return cell
         }
-        cell.setupUI(data: feedsItens[indexPath.row])
-        return cell
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

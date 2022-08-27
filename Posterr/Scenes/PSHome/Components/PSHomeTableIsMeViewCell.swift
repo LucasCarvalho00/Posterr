@@ -1,5 +1,5 @@
 //
-//  PSHomeTableViewCell.swift
+//  PSHomeTableIsMeViewCell.swift
 //  Posterr
 //
 //  Created by Lucas Carvalho on 26/08/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-public final class PSHomeTableViewCell: UITableViewCell {
+public final class PSHomeTableIsMeViewCell: UITableViewCell {
     
     // MARK: - Private Attributes
 
@@ -93,14 +93,14 @@ public final class PSHomeTableViewCell: UITableViewCell {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             userImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: PSMetrics.mediumMargin),
-            userImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: PSMetrics.smallMargin),
+            userImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -PSMetrics.smallMargin),
             userImageView.heightAnchor.constraint(equalToConstant: Metrics.userImageSize.height),
             userImageView.widthAnchor.constraint(equalToConstant: Metrics.userImageSize.width),
             
             stackContentView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: PSMetrics.mediumMargin),
             stackContentView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -PSMetrics.mediumMargin),
-            stackContentView.leadingAnchor.constraint(equalTo: userImageView.trailingAnchor, constant: PSMetrics.mediumMargin),
-            stackContentView.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -PSMetrics.mediumMargin),
+            stackContentView.leadingAnchor.constraint(greaterThanOrEqualTo: contentView.leadingAnchor, constant: PSMetrics.mediumMargin),
+            stackContentView.trailingAnchor.constraint(equalTo: userImageView.leadingAnchor, constant: -PSMetrics.mediumMargin),
             
             messageView.topAnchor.constraint(equalTo: customContentView.topAnchor, constant: PSMetrics.smallMargin),
             messageView.bottomAnchor.constraint(equalTo: customContentView.bottomAnchor, constant: -PSMetrics.smallMargin),
@@ -108,7 +108,7 @@ public final class PSHomeTableViewCell: UITableViewCell {
             messageView.trailingAnchor.constraint(equalTo: customContentView.trailingAnchor, constant: -PSMetrics.smallMargin)
         ])
     }
-        
+    
     // MARK: - Public Functions
 
     public func setupUI(data: PSHomeFeedMessageEntity) {

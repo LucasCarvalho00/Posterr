@@ -13,6 +13,7 @@ public enum PSHomeViewState: Equatable {
     case hasData(PSHomeViewEntity)
     case hasError
     case loadScreen
+    case insertNewMessage(PSHomeFeedMessageEntity)
     case messageSentSuccessfully
 }
 // MARK: - ViewController

@@ -11,7 +11,7 @@ public struct PSHomeViewEntity: Equatable {
     let page: Int
     let totalPages: Int
     let totalResults: Int
-    let feeds: [PSHomeFeedMessageEntity]?
+    var feeds: [PSHomeFeedMessageEntity]?
 }
 
 public struct PSHomeFeedMessageEntity: Equatable {

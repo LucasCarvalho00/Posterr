@@ -126,6 +126,10 @@ public final class PSHomeView: UIView {
     private func messageSentSuccessfully() {
         dataView.messageSentSuccessfully()
     }
+    
+    private func insertNewMessage(entity: PSHomeFeedMessageEntity) {
+        dataView.insertNewMessage(entity: entity)
+    }
 }
 
 // MARK: - Extension
@@ -141,6 +145,8 @@ extension PSHomeView: PSHomeViewProtocol {
             setupLoad()
         case .messageSentSuccessfully:
             messageSentSuccessfully()
+        case let .insertNewMessage(entity):
+            insertNewMessage(entity: entity)
         }
     }
 }
