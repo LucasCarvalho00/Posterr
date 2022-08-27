@@ -48,13 +48,12 @@ public final class PSUserProfileViewController: UIViewController {
         super.viewDidLoad()
         setup()
         viewModelProtocol?.initState()
-        self.title = Constants.title
     }
 
     // MARK: - Private Functions
 
     private func setup() {
-        
+        self.title = Constants.title
     }
 
     private func contentSetup() {

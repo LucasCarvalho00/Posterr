@@ -48,12 +48,13 @@ public final class PSHomeViewController: UIViewController {
         super.viewDidLoad()
         setup()
         viewModelProtocol?.initState()
-        self.title = Constants.title
     }
 
     // MARK: - Private Functions
 
     private func setup() {
+        self.title = Constants.title
+
         let rightBarButtonItem = UIBarButtonItem.init(image: .icAccount.withTintColor(.white), style: .done, target: self, action: #selector(didTapOpenUserSettings))
         self.navigationItem.rightBarButtonItem = rightBarButtonItem
     }
