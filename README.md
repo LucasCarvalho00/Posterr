@@ -136,6 +136,41 @@ Currently we have in the Design System:
 * Some components already implemented
 * Translations
 
+## Network
+
+When we create an application, we need to work with data. This data can come from some external source, for example an API.
+
+However, they are returned in a different style: typically, as JSON. JSON stands for Javascript Object Notation, basically a lightweight format for exchanging information/data between systems.
+
+The problem is that the Swift language cannot use, that is, it does not “understand” JSON data, as it is a textual format.
+
+So we perform the conversion of this JSON data into some kind of data that we can use in Swift. Working with Codables
+
+https://developer.apple.com/documentation/swift/codable
+
+Codables conform to Decodables and Encodables protocols, each with its own particular property.
+
+* Decodables are the types that we can transform JSON into Objects
+* Encodables are the types that we can transform Objects into JSON
+
+Below is an example of the Decodable type.
+
+![Captura de Tela 2022-08-27 às 15 43 20](https://user-images.githubusercontent.com/30445599/187043962-bfe8f007-dbdb-443e-ac14-440b93b8042a.png)
+
+But we still have a problem, we couldn't create a specific network layer per API call, so it would need to be generic to the point of accepting and knowing how to convert any JSON into any Decodable object within our project.
+
+For this we use functions with Opaque Types in Swift
+
+![Captura de Tela 2022-08-27 às 15 46 02](https://user-images.githubusercontent.com/30445599/187044117-f59e5f89-d328-4230-a450-421c26e8bc23.png)
+
+Documentation link: https://docs.swift.org/swift-book/LanguageGuide/OpaqueTypes.html#:~:text=An%20opaque%20type%20refers%20to,that%20conforms%20to%20the%20protocol.
+
+Where the Network protocol accepts any object "Represented by the T in the picture above" of type Decodable, this way it will know that any object delivered will have properties of type Decodable.
+
+And for UseCase to know exactly which object it will receive, just inform the expected object in the protocol response above.
+
+![Captura de Tela 2022-08-27 às 15 47 38](https://user-images.githubusercontent.com/30445599/187044128-9c4473cb-7ba7-4c0b-a74d-244c62450a9b.png)
+
 ## Modularization strategy
 
 As a modularization strategy for this application, each layer of this project has only a single responsibility and to know its pre-marked peers.
