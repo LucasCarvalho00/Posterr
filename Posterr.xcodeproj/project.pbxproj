@@ -306,7 +306,6 @@
 				76B1F81428BA76140001DD94 /* Commons */,
 				76A29D2B28BA71B600B0AC61 /* Foundation */,
 				76A29D2C28BA71BB00B0AC61 /* Services */,
-				76A29D2D28BA71CB00B0AC61 /* Scenes */,
 			);
 			path = PosterrTests;
 			sourceTree = "<group>";
@@ -713,13 +712,6 @@
 				76B1F81F28BA7E9E0001DD94 /* UseCases */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		76A29D2D28BA71CB00B0AC61 /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Scenes;
 			sourceTree = "<group>";
 		};
 		76B1F81428BA76140001DD94 /* Commons */ = {
