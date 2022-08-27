@@ -1,0 +1,94 @@
+{
+   "page":1,
+   "totalPages":490,
+   "totalResults":9799,
+   "feeds":[
+      {
+         "userID":1,
+         "userAvatar":"https://w7.pngwing.com/pngs/122/453/png-transparent-computer-icons-user-profile-avatar-female-profile-heroes-head-woman.png",
+         "message":"Hello y all, how are you going?",
+         "typeOfMessage":"NORMAL",
+         "date": "2022-08-26"
+      },
+      {
+         "userID":2,
+         "userAvatar":"https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png",
+         "message":"Olá a todos! Bom dia",
+         "typeOfMessage":"NORMAL",
+         "date": "2022-08-26"
+      },
+      {
+         "userID":2,
+         "userAvatar":"https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png",
+         "message":"Did you see this?",
+         "date": "2022-08-26",
+         "typeOfMessage":"QUOTE",
+         "linkedMessage":{
+            "userID":1,
+            "userAvatar":"https://w7.pngwing.com/pngs/122/453/png-transparent-computer-icons-user-profile-avatar-female-profile-heroes-head-woman.png",
+            "message":"Hello y'all, how are you going?",
+            "date": "2022-08-26"
+         }
+      },
+      {
+         "userID":1,
+         "userAvatar":"https://w7.pngwing.com/pngs/122/453/png-transparent-computer-icons-user-profile-avatar-female-profile-heroes-head-woman.png",
+         "message":"The new season is fantastic",
+         "typeOfMessage":"NORMAL",
+         "date": "2022-08-26"
+      },
+      {
+         "userID":1,
+         "userAvatar":"https://w7.pngwing.com/pngs/122/453/png-transparent-computer-icons-user-profile-avatar-female-profile-heroes-head-woman.png",
+         "message":"I can't believe this happened!",
+         "typeOfMessage":"NORMAL",
+         "date": "2022-08-26"
+      },
+      {
+         "userID":1,
+         "userAvatar":"https://w7.pngwing.com/pngs/122/453/png-transparent-computer-icons-user-profile-avatar-female-profile-heroes-head-woman.png",
+         "message":"OMG",
+         "typeOfMessage":"NORMAL",
+         "date": "2022-08-26"
+      },
+      {
+         "userID":2,
+         "userAvatar":"https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png",
+         "message":"Whats happen! PLEASE TELL ME",
+         "date": "2022-08-26",
+         "typeOfMessage":"REPLY",
+         "linkedMessage":{
+            "userID":1,
+            "userAvatar":"https://w7.pngwing.com/pngs/122/453/png-transparent-computer-icons-user-profile-avatar-female-profile-heroes-head-woman.png",
+            "message":"I can't believe this happened!",
+            "date": "2022-08-26"
+         }
+      },
+      {
+         "userID":1,
+         "userAvatar":"https://w7.pngwing.com/pngs/122/453/png-transparent-computer-icons-user-profile-avatar-female-profile-heroes-head-woman.png",
+         "message":"No! kkkkkkk",
+         "date": "2022-08-26",
+         "typeOfMessage":"REPLY",
+         "linkedMessage":{
+            "userID":2,
+            "userAvatar":"https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png",
+            "message":"Whats happen! PLEASE TELL ME",
+            "date": "2022-08-26"
+         }
+      },
+      {
+         "userID":3,
+         "userAvatar":"https://www.shareicon.net/data/128x128/2016/09/15/829472_man_512x512.png",
+         "message":"Did you see this? we are all curious",
+         "date": "2022-08-26",
+         "typeOfMessage":"QUOTE",
+         "linkedMessage":{
+             "userID":2,
+             "userAvatar":"https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png",
+             "message":"Whats happen! PLEASE TELL ME",
+             "date": "2022-08-26"
+         }
+      }
+   ]
+}
