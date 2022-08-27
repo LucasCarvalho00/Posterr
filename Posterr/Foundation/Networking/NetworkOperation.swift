@@ -75,7 +75,7 @@ public final class NetworkOperation {
         parseObject(jsonData: jsonData, completion: completion)
     }
     
-    private func parseObject<T: Decodable>(jsonData: Data, completion: @escaping (Result<T, NetworkOperationError>) -> Void) {
+    func parseObject<T: Decodable>(jsonData: Data, completion: @escaping (Result<T, NetworkOperationError>) -> Void) {
         do {
             let decoder = JSONDecoder()
             let decoded = try decoder.decode(T.self, from: jsonData)

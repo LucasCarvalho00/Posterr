@@ -1,0 +1,30 @@
+{
+    "cards": [{
+        "id": 1,
+        "productId": 1,
+        "type": "credit_card",
+        "title": "Visa",
+    },
+    {
+        "productId": 2,
+        "type": "credit_card",
+        "title": "Mastercard",
+    },
+    {
+        "id": 3,
+        "productId": 3,
+        "type": "open_finance",
+        "title": "Itaú",
+    },
+    {
+        "id": 4,
+        "productId": 4,
+        "type": "mercado_pago",
+        "title": "Mercado Pago"
+    },
+    {
+        "id": 5,
+        "productId": 5,
+        "type": "new_card"
+    }]
+}
