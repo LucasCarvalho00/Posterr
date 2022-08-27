@@ -4,7 +4,7 @@ PODS:
   - Swinject (2.8.1)
 
 DEPENDENCIES:
-  - IQKeyboardManager
+  - IQKeyboardManager (= 6.5.10)
   - RxSwift (= 6.5.0)
   - Swinject (= 2.8.1)
 
@@ -19,6 +19,6 @@ SPEC CHECKSUMS:
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   Swinject: 97112918bd7e0785dc2df7036213f3c8cbba6586
 
-PODFILE CHECKSUM: 6aaed4b221e023d078f287ef1d8d93963dcbb646
+PODFILE CHECKSUM: a483a136c6b0915263d2703fb7c9223576d89187
 
 COCOAPODS: 1.11.3

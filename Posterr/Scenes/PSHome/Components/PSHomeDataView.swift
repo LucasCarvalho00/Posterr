@@ -167,7 +167,7 @@ public final class PSHomeDataView: UIView {
 
         DispatchQueue.main.async {
             let index = IndexPath(row: self.feedsItens.count - 1, section: 0)
-            self.tableView.scrollToRow(at: index, at: .bottom, animated: false)
+            self.tableView.scrollToRow(at: index, at: .bottom, animated: true)
         }
     }
     
@@ -180,7 +180,7 @@ public final class PSHomeDataView: UIView {
         
         DispatchQueue.main.async {
             let index = IndexPath(row: self.feedsItens.count - 1, section: 0)
-            self.tableView.scrollToRow(at: index, at: .bottom, animated: false)
+            self.tableView.scrollToRow(at: index, at: .bottom, animated: true)
         }
     }
     
@@ -193,7 +193,7 @@ public final class PSHomeDataView: UIView {
 
         DispatchQueue.main.async {
             let index = IndexPath(row: self.feedsItens.count - 1, section: 0)
-            self.tableView.scrollToRow(at: index, at: .bottom, animated: false)
+            self.tableView.scrollToRow(at: index, at: .bottom, animated: true)
         }
     }
     

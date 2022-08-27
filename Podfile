@@ -14,6 +14,3 @@ end
 target 'PosterrTests' do
 
 end
-
-target 'PosterrUITests' do
-end
