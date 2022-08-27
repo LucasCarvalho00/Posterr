@@ -11,7 +11,8 @@ import UIKit
 
 public enum PSUserProfileViewState: Equatable {
     case hasData(PSUserProfileViewEntity)
-    case isEmpty
+    case hasError
+    case loadScreen
 }
 // MARK: - ViewController
 

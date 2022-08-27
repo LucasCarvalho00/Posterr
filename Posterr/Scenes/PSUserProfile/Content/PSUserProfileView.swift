@@ -76,7 +76,7 @@ extension PSUserProfileView: PSUserProfileViewProtocol {
         switch viewState {
         case let .hasData(data):
             setup(data: data)
-        case .isEmpty:
+        case .loadScreen, .hasError:
             break
         }
     }

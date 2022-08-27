@@ -6,6 +6,10 @@
 //
 
 public struct GetUserInformationUseCaseResponse: Decodable {
-    let statusCode: Int
-    let message: String
+    let userID: Int
+    let userName: String
+    let totalMessages: Int
+    let createdDate: String
+    let totalTodayMessages: Int
+    let userAvatar: String
 }

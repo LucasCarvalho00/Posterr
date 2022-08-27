@@ -5,12 +5,15 @@
 //  Created by Lucas Carvalho on 24/08/22.
 //
 
+import RxSwift
+
 public final class PSUserProfileViewModel {
 
     // MARK: - Public Attributes
 
     public weak var viewController: PSUserProfileViewControllerProtocol?
-    var entity: PSUserProfileViewEntity?
+    private var entity: PSUserProfileViewEntity?
+    private let disposeBag = DisposeBag()
 
     // MARK: - Private Properties
 
@@ -28,12 +31,37 @@ public final class PSUserProfileViewModel {
     }
     
     // MARK: - Private Functions
+    
+    private func initScreen() {
+        viewController?.setupUI(with: .loadScreen)
+        callGetUserInformationUseCase()
+    }
+    
+    private func callGetUserInformationUseCase() {
+        getUserInformationUseCaseProtocol
+            .execute()
+            .subscribe(onNext: { [weak self] result in
+                switch result {
+                case let .success(data):
+//                    guard let entity = self?.makePSHomeViewEntity(response: data) else {
+//                        return
+//                    }
+//
+//                    self?.viewController?.setupUI(with: .hasData(entity))
+                    print("User received successfully")
+                case let .failure(error):
+                    self?.viewController?.setupUI(with: .hasError)
+                    print(error)
+                }
+            })
+            .disposed(by: disposeBag)
+    }
 }
 
 // MARK: - Extensions
 
 extension PSUserProfileViewModel: PSUserProfileViewModelProtocol {
     public func initState() {
-        
+        initScreen()
     }
 }
