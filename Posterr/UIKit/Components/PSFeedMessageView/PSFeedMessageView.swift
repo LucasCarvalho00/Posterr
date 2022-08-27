@@ -26,7 +26,6 @@ public final class PSFeedMessageView: UIView {
     private lazy var contentView: UIView = {
         let contentView = UIView()
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.backgroundColor = .white
         return contentView
     }()
     

@@ -44,4 +44,12 @@ extension UIColor {
     public class var neutral80: UIColor {
         return UIColor(named: "neutral80")!
     }
+    
+    public class var reply: UIColor {
+        return UIColor(named: "reply")!
+    }
+    
+    public class var quote: UIColor {
+        return UIColor(named: "quote")!
+    }
 }

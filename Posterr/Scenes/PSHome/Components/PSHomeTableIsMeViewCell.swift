@@ -114,13 +114,25 @@ public final class PSHomeTableIsMeViewCell: UITableViewCell {
     public func setupUI(data: PSHomeFeedMessageEntity) {
         messageView.setupMessage(message: data.message, date: data.date)
         setupImage(photoURL: data.userAvatar)
+        setupTypeCell(typeOfMessage: data.typeOfMessage)
         
-        if let linkedMessage = data.linkedMessage {
-            
-        }
+//        if let linkedEntity = data.linkedMessage {
+//            linkedMessageView.setupMessage(message: linkedEntity.message, date: linkedEntity.date)
+//        }
     }
     
     // MARK: - Private Functions
+    
+    private func setupTypeCell(typeOfMessage: PSHomeFeedMessageTypeEntity) {
+        switch typeOfMessage {
+        case .normal:
+            customContentView.backgroundColor = .white
+        case .reply:
+            customContentView.backgroundColor = .reply
+        case .quote:
+            customContentView.backgroundColor = .quote
+        }
+    }
     
     private func setupImage(photoURL: String) {
         if let urlPhoto = URL(string: photoURL) {

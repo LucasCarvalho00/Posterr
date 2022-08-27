@@ -13,6 +13,7 @@ public final class PSHomeViewModel {
 
     private struct Metrics {
         static let mockCurrentUserID = 2
+        static let maximiumMessagesPerDay = 7
     }
     
     private struct Constants {
@@ -33,7 +34,7 @@ public final class PSHomeViewModel {
     private let getFeedMessageUseCaseProtocol: GetFeedMessageUseCaseProtocol
     private let postFeedMessageUseCaseProtocol: PostFeedMessageUseCaseProtocol
     private let disposeBag = DisposeBag()
-
+    
     // MARK: - Initializer
 
     public init(
