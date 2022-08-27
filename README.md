@@ -49,6 +49,36 @@ Where each layer of the architecture has its responsibility defined.
 
   As this project is based on Swininject, which is a dependency container registered in the application launcher, it means that, if I need to change who resolves protocol x or y within this container, I will not be able to without restarting the application.
 
+## Application Modules
+
+* App
+
+AppDelegate, SceneDelegate and Info.Plist
+
+* Foundation
+
+The Foundation Layer is responsible for creating and making available to the application the basic resources for it to exist.
+
+* DependencyInjection:
+
+In order to uncouple ViewModels within ViewControllers, the Dependency Injecton layer registers and resolves all dependencies of all Application classes.
+
+* FlowController:
+
+Similar to a flow controller, the FlowController layer calls and manages application flows. With the crucial difference that the FlowController doesn't register any ViewController, it just asks for the instance to be resolved.
+
+* Services
+
+The Services layer is responsible for storing all the UseCases and Requests of the application, it is the only layer of the project that can know the Network and offers the ViewModel a way to consume APIs
+
+* UIKit
+
+Application UIKit layer, where all components and resources for creating Layouts are located.
+
+* Scenes
+
+All Scenes/Screens of the application.
+
 ## Protocol Oriented Programming - POP
 
 A protocol defines a schema of methods, properties, and other requirements that fulfill a particular task or part of functionality. The protocol can then be adopted by a class, struct, or enum to provide an actual implementation of these requirements.
@@ -86,36 +116,6 @@ When initiating the API call, the ViewModel already notifies that the screen nee
 And when receiving the result, if it is successful, it will update the user's layout again, showing the data received or it will show an error screen.
 
 ![Captura de Tela 2022-08-27 às 15 13 48](https://user-images.githubusercontent.com/30445599/187043160-a06defc8-d271-4775-8a12-c9c568ca5f8b.png)
-
-## Application Modules
-
-* App
-
-AppDelegate, SceneDelegate and Info.Plist
-
-* Foundation
-
-The Foundation Layer is responsible for creating and making available to the application the basic resources for it to exist.
-
-* DependencyInjection:
-
-In order to uncouple ViewModels within ViewControllers, the Dependency Injecton layer registers and resolves all dependencies of all Application classes.
-
-* FlowController:
-
-Similar to a flow controller, the FlowController layer calls and manages application flows. With the crucial difference that the FlowController doesn't register any ViewController, it just asks for the instance to be resolved.
-
-* Services
-
-The Services layer is responsible for storing all the UseCases and Requests of the application, it is the only layer of the project that can know the Network and offers the ViewModel a way to consume APIs
-
-* UIKit
-
-Application UIKit layer, where all components and resources for creating Layouts are located.
-
-* Scenes
-
-All Scenes/Screens of the application.
 
 ## Design System
 
