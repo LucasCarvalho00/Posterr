@@ -96,7 +96,7 @@ A protocol defines a schema of methods, properties, and other requirements that 
 
 **Documentation link:** https://docs.swift.org/swift-book/LanguageGuide/Protocols.html
 
-## Scene state change
+## Scene state design pattern
 
 Scenes work as a "State Machine", where the view through the "setupUI" offers the possibility for the ViewController and ViewModel layers to change what is being displayed to the user.
 
@@ -116,6 +116,10 @@ When initiating the API call, the ViewModel already notifies that the screen nee
 And when receiving the result, if it is successful, it will update the user's layout again, showing the data received or it will show an error screen.
 
 ![Captura de Tela 2022-08-27 às 15 13 48](https://user-images.githubusercontent.com/30445599/187043160-a06defc8-d271-4775-8a12-c9c568ca5f8b.png)
+
+> The state pattern is a behavioral pattern that allows an object to change its behavior at runtime. It does so by changing its current state. Here, “state” means the set of data that describes how a given object should behave at a given time.
+
+You can read more about this Design Pattern at the link: https://www.raywenderlich.com/books/design-patterns-by-tutorials/v3.0/chapters/15-state-pattern
 
 ## Design System
 
